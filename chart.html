@@ -2,27 +2,30 @@
 
 <head>
 <meta charset="utf-8">
+<script src = "https://code.jquery.com/jquery-3.1.1.js"></script>
 <script>
+	$(document).ready(function(){});
+
 	//type
-	const life = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/001.jpg';
-	const machine = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/002.jpg';
-	const spirit = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/003.jpg';
-	const erode = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/005.jpg';
-	const quarantine = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/004.jpg';
+	const life = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/001.jpg';    	// 1
+	const machine = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/002.jpg';	// 2
+	const spirit = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/003.jpg';		// 3
+	const erode = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/005.jpg';		// 4
+	const quarantine = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/004.jpg';	// 5
 
 	//weapon
-	const pistol = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/001.jpg';
-	const assault = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/002.jpg';
-	const shotgun = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/003.jpg';
-	const sniper = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/004.jpg';
-	const heavy = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/005.jpg';
+	const pistol = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/001.jpg';		// 6
+	const assault = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/002.jpg';		// 7
+	const shotgun = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/003.jpg';		// 8
+	const sniper = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/004.jpg';		// 9
+	const heavy = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/005.jpg';		// 10
 
 	//tactic
-	const power = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/001.jpg';
-	const support = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/004.jpg';
-	const onset = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/002.jpg';
-	const heal = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/005.jpg';
-	const defense = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/003.jpg';
+	const power = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/001.jpg';			// 11
+	const support = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/004.jpg';		// 12
+	const onset = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/002.jpg';			// 13
+	const heal = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/005.jpg';			// 14
+	const defense = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/003.jpg';		// 15
 
 	const guide_dir = 'https://girlcafegun.boom-app.wiki/entry/';
 
@@ -36,53 +39,64 @@
 
 	const header_title = ['', 'SS랭크', 'S랭크', 'A랭크', 'B랭크'];
 
+	var btn = [0, 0, 0, 0, 0]; // Life, Machine, Spirit, Erode, Quarantine 순서
+
+
+
+
 	var character = [
-		{class: '전술장비', name: '유키', type: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-1', appear: on, rarity: star4, picture: picture_dir + '001.jpg', rank: 1},
-		{class: '체스', name: '코넬리아', type: spirit, weapon: heavy, tactic: onset, guide: guide_dir + 'chara-84', appear: off, rarity: star4, picture: picture_dir + '084.jpg', rank: 1},
-		{class: '서약', name: '리타', type: quarantine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-94', appear: off, rarity: star4, picture: picture_dir + '094.jpg', rank: 1},
-		{class: '서약', name: '코넬리아', type: machine, weapon: shotgun, tactic: power, guide: guide_dir + 'chara-74', appear: off, rarity: star4, picture: picture_dir + '074.jpg', rank: 1},
-		{class: '데이트', name: '지무유', type: machine, weapon: sniper, tactic: power, guide: guide_dir + 'chara-134', appear: off, rarity: star4, picture: picture_dir + '134.jpg', rank: 1},
-		{class: '전술장비', name: '아이린', type: machine, weapon: pistol, tactic: power, guide: guide_dir + 'chara-2', appear: on, rarity: star4, picture: picture_dir + '002.jpg', rank: 3},
-		{class: '메이드복', name: '지무카', type: spirit, weapon: assault, tactic: support, guide: guide_dir + 'chara-3', appear: on, rarity: star4, picture: picture_dir + '003.jpg', rank: 3},
-		{class: '메이드복', name: '지무유', type: spirit, weapon: pistol, tactic: power, guide: guide_dir + 'chara-6', appear: on, rarity: star4, picture: picture_dir + '006.jpg', rank: 3},
-		{class: '메이드복', name: '소쇼우신', type: machine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-5', appear: on, rarity: star4, picture: picture_dir + '005.jpg', rank: 3},
-		{class: '메이드복', name: '문', type: life, weapon: heavy, tactic: power, guide: guide_dir + 'chara-4', appear: on, rarity: star4, picture: picture_dir + '004.jpg', rank: 3},
-		{class: '원력오염', name: '지무카', type: spirit, weapon: assault, tactic: power, guide: guide_dir + 'chara-66', appear: on, rarity: star4, picture: picture_dir + '066.jpg', rank: 3},
+		//4성
+		{class: '전술장비', name: '유키', type: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-1', appear: on, rarity: star4, picture: picture_dir + '001.jpg', rank: 1, selected : 1},
+		{class: '체스', name: '코넬리아', type: spirit, weapon: heavy, tactic: onset, guide: guide_dir + 'chara-84', appear: off, rarity: star4, picture: picture_dir + '084.jpg', rank: 1, selected : 1},
+		{class: '서약', name: '리타', type: quarantine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-94', appear: off, rarity: star4, picture: picture_dir + '094.jpg', rank: 1, selected : 1},
+		{class: '서약', name: '코넬리아', type: machine, weapon: shotgun, tactic: power, guide: guide_dir + 'chara-74', appear: on, rarity: star4, picture: picture_dir + '074.jpg', rank: 1, selected : 1},
+		{class: '데이트', name: '지무유', type: machine, weapon: sniper, tactic: power, guide: guide_dir + 'chara-134', appear: off, rarity: star4, picture: picture_dir + '134.jpg', rank: 1, selected : 1},
+		{class: '전술장비', name: '아이린', type: machine, weapon: pistol, tactic: power, guide: guide_dir + 'chara-2', appear: on, rarity: star4, picture: picture_dir + '002.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '지무카', type: spirit, weapon: assault, tactic: support, guide: guide_dir + 'chara-3', appear: on, rarity: star4, picture: picture_dir + '003.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '지무유', type: spirit, weapon: pistol, tactic: power, guide: guide_dir + 'chara-6', appear: on, rarity: star4, picture: picture_dir + '006.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '소쇼우신', type: machine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-5', appear: on, rarity: star4, picture: picture_dir + '005.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '문', type: life, weapon: heavy, tactic: power, guide: guide_dir + 'chara-4', appear: on, rarity: star4, picture: picture_dir + '004.jpg', rank: 3, selected : 1},
+		{class: '원력오염', name: '지무카', type: spirit, weapon: assault, tactic: power, guide: guide_dir + 'chara-66', appear: on, rarity: star4, picture: picture_dir + '066.jpg', rank: 3, selected : 1},
+		{class: '서약', name: '그루니에', type: life, weapon: heavy, tactic: defense, guide: guide_dir + 'chara-72', appear: on, rarity: star4, picture: picture_dir + '072.jpg', rank: 3, selected : 1},
+		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000.jpg', rank: , selected : 1},
+		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000.jpg', rank: , selected : 1},
 
-
-
-		{class: '전술장비', name: '지무카', type: machine, weapon: assault, tactic: power, guide: guide_dir + 'chara-7', appear: on, rarity: star3, picture: picture_dir + '007.jpg', rank: 2},
-		{class: '메이드복', name: '이코스', type: quarantine, weapon: pistol, tactic: onset, guide: guide_dir + 'chara-21', appear: on, rarity: star3, picture: picture_dir + '021.jpg', rank: 2},
-		{class: '사복', name: '지무유', type: erode, weapon: assault, tactic: onset, guide: guide_dir + 'chara-14', appear: on, rarity: star3, picture: picture_dir + '014.jpg', rank: 2},
-		{class: '사복', name: '문', type: erode, weapon: shotgun, tactic: power, guide: guide_dir + 'chara-26', appear: on, rarity: star3, picture: picture_dir + '026.jpg', rank: 2},
-		{class: '메이드복', name: '아이린', type: quarantine, weapon: heavy, tactic: onset, guide: guide_dir + 'chara-18', appear: on, rarity: star3, picture: picture_dir + '018.jpg', rank: 3},
-		{class: '메이드복', name: '로코코', type: machine, weapon: sniper, tactic: power, guide: guide_dir + 'chara-23', appear: on, rarity: star3, picture: picture_dir + '023.jpg', rank: 3},
-		{class: '메이드복', name: '유키', type: quarantine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-17', appear: on, rarity: star3, picture: picture_dir + '017.jpg', rank: 3},
-		{class: '메이드복', name: '코넬리아', type: machine, weapon: assault, tactic: power, guide: guide_dir + 'chara-8', appear: on, rarity: star3, picture: picture_dir + '008.jpg', rank: 3},
-		{class: '메이드복', name: '리타', type: life, weapon: sniper, tactic: support, guide: guide_dir + 'chara-20', appear: on, rarity: star3, picture: picture_dir + '020.jpg', rank: 3},
-		{class: '메이드복', name: '주노', type: life, weapon: pistol, tactic: power, guide: guide_dir + 'chara-25', appear: on, rarity:star3 , picture: picture_dir + '025.jpg', rank: 3},
-		{class: '사복', name: '이코스', type: machine, weapon: heavy, tactic: power, guide: guide_dir + 'chara-16', appear: on, rarity: star3, picture: picture_dir + '016.jpg', rank: 3},
-		{class: '사복', name: '코넬리아', type: erode, weapon: heavy, tactic: onset, guide: guide_dir + 'chara-9', appear: on, rarity: star3, picture: picture_dir + '009.jpg', rank: 3},
-		{class: '사복', name: '리타', type: spirit, weapon: shotgun, tactic: heal, guide: guide_dir + 'chara-15', appear: on, rarity: star3, picture: picture_dir + '015.jpg', rank: 3},
-		{class: '사복', name: '주노', type: quarantine, weapon: sniper, tactic: onset, guide: guide_dir + 'chara-24', appear: on, rarity: star3, picture: picture_dir + '024.jpg', rank: 3},
-		{class: '사복', name: '그루니에', type: spirit, weapon: assault, tactic: heal, guide: guide_dir + 'chara-12', appear: on, rarity: star3, picture: picture_dir + '012.jpg', rank: 3},
-		{class: '전술장비', name: '리타', type: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-64', appear: on, rarity: star3, picture: picture_dir + '064.jpg', rank: 3},
-		{class: '메이드복', name: '그루니에', type: machine, weapon: pistol, tactic: support, guide: guide_dir + 'chara-19', appear: on, rarity: star3, picture: picture_dir + '019.jpg', rank: 4},
-		{class: '사복', name: '지무카', type: life, weapon: shotgun, tactic: heal, guide: guide_dir + 'chara-13', appear: on, rarity: star3, picture: picture_dir + '013.jpg', rank: 4},
-		{class: '사복', name: '아이린', type: life, weapon: assault, tactic: support, guide: guide_dir + 'chara-11', appear: on, rarity: star3, picture: picture_dir + '011.jpg', rank: 4},
-		{class: '사복', name: '로코코', type: erode, weapon: pistol, tactic: support, guide: guide_dir + 'chara-22', appear: on, rarity: star3, picture: picture_dir + '022.jpg', rank: 4},
-		{class: '사복', name: '유키', type: spirit, weapon: sniper, tactic: defense, guide: guide_dir + 'chara-10', appear: on, rarity: star3, picture: picture_dir + '010.jpg', rank: 4},
-		{class: '사복', name: '소쇼우신', type: life, weapon: assault, tactic: support, guide: guide_dir + 'chara-27', appear: on, rarity: star3, picture: picture_dir + '027.jpg', rank: 4},
-		{class: '수영복', name: '지무유', type: quarantine, weapon: pistol, tactic: onset, guide: guide_dir + 'chara-67', appear: on, rarity: star3, picture: picture_dir + '067.jpg', rank: 4},
-		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000,jpg', rank: },
-		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000,jpg', rank: },
-		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000,jpg', rank: },
-		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000,jpg', rank: },
+		//3성
+		{class: '전술장비', name: '지무카', type: machine, weapon: assault, tactic: power, guide: guide_dir + 'chara-7', appear: on, rarity: star3, picture: picture_dir + '007.jpg', rank: 2, selected : 1},
+		{class: '메이드복', name: '이코스', type: quarantine, weapon: pistol, tactic: onset, guide: guide_dir + 'chara-21', appear: on, rarity: star3, picture: picture_dir + '021.jpg', rank: 2, selected : 1},
+		{class: '사복', name: '지무유', type: erode, weapon: assault, tactic: onset, guide: guide_dir + 'chara-14', appear: on, rarity: star3, picture: picture_dir + '014.jpg', rank: 2, selected : 1},
+		{class: '사복', name: '문', type: erode, weapon: shotgun, tactic: power, guide: guide_dir + 'chara-26', appear: on, rarity: star3, picture: picture_dir + '026.jpg', rank: 2, selected : 1},
+		{class: '메이드복', name: '아이린', type: quarantine, weapon: heavy, tactic: onset, guide: guide_dir + 'chara-18', appear: on, rarity: star3, picture: picture_dir + '018.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '로코코', type: machine, weapon: sniper, tactic: power, guide: guide_dir + 'chara-23', appear: on, rarity: star3, picture: picture_dir + '023.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '유키', type: quarantine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-17', appear: on, rarity: star3, picture: picture_dir + '017.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '코넬리아', type: machine, weapon: assault, tactic: power, guide: guide_dir + 'chara-8', appear: on, rarity: star3, picture: picture_dir + '008.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '리타', type: life, weapon: sniper, tactic: support, guide: guide_dir + 'chara-20', appear: on, rarity: star3, picture: picture_dir + '020.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '주노', type: life, weapon: pistol, tactic: power, guide: guide_dir + 'chara-25', appear: on, rarity:star3 , picture: picture_dir + '025.jpg', rank: 3, selected : 1},
+		{class: '사복', name: '이코스', type: machine, weapon: heavy, tactic: power, guide: guide_dir + 'chara-16', appear: on, rarity: star3, picture: picture_dir + '016.jpg', rank: 3, selected : 1},
+		{class: '사복', name: '코넬리아', type: erode, weapon: heavy, tactic: onset, guide: guide_dir + 'chara-9', appear: on, rarity: star3, picture: picture_dir + '009.jpg', rank: 3, selected : 1},
+		{class: '사복', name: '리타', type: spirit, weapon: shotgun, tactic: heal, guide: guide_dir + 'chara-15', appear: on, rarity: star3, picture: picture_dir + '015.jpg', rank: 3, selected : 1},
+		{class: '사복', name: '주노', type: quarantine, weapon: sniper, tactic: onset, guide: guide_dir + 'chara-24', appear: on, rarity: star3, picture: picture_dir + '024.jpg', rank: 3, selected : 1},
+		{class: '사복', name: '그루니에', type: spirit, weapon: assault, tactic: heal, guide: guide_dir + 'chara-12', appear: on, rarity: star3, picture: picture_dir + '012.jpg', rank: 3, selected : 1},
+		{class: '전술장비', name: '리타', type: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-64', appear: on, rarity: star3, picture: picture_dir + '064.jpg', rank: 3, selected : 1},
+		{class: '메이드복', name: '그루니에', type: machine, weapon: pistol, tactic: support, guide: guide_dir + 'chara-19', appear: on, rarity: star3, picture: picture_dir + '019.jpg', rank: 4, selected : 1},
+		{class: '사복', name: '지무카', type: life, weapon: shotgun, tactic: heal, guide: guide_dir + 'chara-13', appear: on, rarity: star3, picture: picture_dir + '013.jpg', rank: 4, selected : 1},
+		{class: '사복', name: '아이린', type: life, weapon: assault, tactic: support, guide: guide_dir + 'chara-11', appear: on, rarity: star3, picture: picture_dir + '011.jpg', rank: 4, selected : 1},
+		{class: '사복', name: '로코코', type: erode, weapon: pistol, tactic: support, guide: guide_dir + 'chara-22', appear: on, rarity: star3, picture: picture_dir + '022.jpg', rank: 4, selected : 1},
+		{class: '사복', name: '유키', type: spirit, weapon: sniper, tactic: defense, guide: guide_dir + 'chara-10', appear: on, rarity: star3, picture: picture_dir + '010.jpg', rank: 4, selected : 1},
+		{class: '사복', name: '소쇼우신', type: life, weapon: assault, tactic: support, guide: guide_dir + 'chara-27', appear: on, rarity: star3, picture: picture_dir + '027.jpg', rank: 4, selected : 1},
+		{class: '수영복', name: '지무유', type: quarantine, weapon: pistol, tactic: onset, guide: guide_dir + 'chara-67', appear: on, rarity: star3, picture: picture_dir + '067.jpg', rank: 4, selected : 1},
+		{class: '서약', name: '코넬리아', type: machine, weapon: shotgun, tactic: power, guide: guide_dir + 'chara-075', appear: on, rarity: star3, picture: picture_dir + '075.jpg', rank: 3, selected : 1},
+		{class: '서약', name: '그루니에', type: life, weapon: heavy, tactic: defense, guide: guide_dir + 'chara-73', appear: on, rarity: star3, picture: picture_dir + '073.jpg', rank: 4, selected : 1},
+		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000.jpg', rank: , selected : 1},
+		// {class: '', name: '', type: , weapon: , tactic: , guide: guide_dir + 'chara-', appear: , rarity: , picture: picture_dir + '000.jpg', rank: , selected : 1},
 	];
 
-	function create(){
+	function create(){ //$(".header").empty();
+
+		document.write("<div class = 'page'>");
 
 		for (var j = 1; j < 5; j++){
+			document.write("<div class = \"table\">")
 			document.write("<div class = \"header\">" + header_title[j] + "</div>");
 			document.write("<div class = \"clear\"></div>");
 
@@ -94,8 +108,6 @@
 					document.write("	<div class = \"border\" style = \"border: 5px solid " + character[i].rarity + "\">	");
 					document.write("	<img class = \"ch_img\" src = \"" + character[i].picture +"\" width = 100>	");
 					document.write("	<div class = \"box_opacity\" style = \"opacity:" + character[i].appear +"\"></div>	");
-					// document.write("	<a href = \"" + character[i].guide + "\">");
-					// document.write("	<div class = \"text\"><div>" + character[i].class + "<br>" + character[i].name + "</a></div></div>	");
 					document.write("	<div class = \"status\">	");
 					document.write("	<img class = \"type\" src = \"" + character[i].type + "\"></img>	");
 					document.write("	<img class = \"weapon\" src = \"" + character[i].weapon + "\"></img>	");
@@ -103,9 +115,51 @@
 					document.write("	</div></div></a>	<div class = \"text\">" + character[i].class + "<br>" + character[i].name + "</div> 	</div>");
 				}
 			}
+
 			document.write("</div>")
-			document.write("<div class = \"clear\"></div>");
+			document.write("<div class = \"clear\"></div></div>");
 		}
+		document.write("</div>");
+	}
+// 1 2 3 4 5 / 11 12 13 14 15 / 101 102 103 104 105
+	// function sort(){
+
+	// 	for(var i in character){
+	// 		if(btn_Machine )
+
+	// 	}
+
+	// }
+
+// Life, Machine, Spirit, Erode, Quarantine 순서
+	function btn_Life_Click(){
+		if(btn[0] == 1){
+			for (var i in btn){
+				btn[i] = 0;
+				//sort();
+			}
+		}
+		else if(btn[0] == 0){
+			btn[0] = 1;
+			$(".table").empty();
+			//sort();
+		}
+	}
+
+	function btn_Machine_Click(){
+		alert("버튼1");
+	}
+
+	function btn_Spirit_Click(){
+		alert("버튼1");
+	}
+
+	function btn_Erode_Click(){
+		alert("버튼1");
+	}
+
+	function btn_Quarantine_Click(){
+		alert("버튼1");
 	}
 
 	create();
@@ -113,12 +167,11 @@
 </script>
 
 <style>
-
-	.test{
-		float: left;
-	}
-
 	@font-face { font-family: 'paybooc-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+	.page{
+		width: 1000px;
+	}
 
 	.header{
 		width: 950px;
@@ -138,14 +191,16 @@
 
 	.body{
 		width: 1000px;
+		float: left;
 		padding: 5px;
 		padding-left: 10px;
 	}
 
 	.wrapper{
 		float: left;
-		width : 110px; height : 180px;
+		width : 110px; height : 170px;
 		margin-right: 10px;
+		margin-bottom: 10px;
 	}
 
 	.border{
@@ -162,7 +217,6 @@
 		width : 100px; height : 100px; 
 	}
 
-
 	.text{
 		/*position: absolute; */
 		width: 110px; 
@@ -178,12 +232,12 @@
 		text-align :right; 
 	}
 
-	.text:hover{
+/*	.text:hover{
 		opacity: 0.3;
 		-webkit-transition-property: opacity;
 		-webkit-transition-duration: 0.2s;
 		-webkit-transition-timing-function: ease;
-	}
+	}*/
 
 	.status{
 		position: relative;
@@ -220,21 +274,7 @@
 
 <body>
 
-<!-- <div class = "wrapper">
-	<div class = "border" style = "border: 5px solid yellow">
-		<img class = "ch_img" src = "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/chara/s/001.jpg" width = 100>
-		<div class = "text">
-			<div style = "color: white;"> 전술장비<br>유키</div>
-		</div>
-		<div class = "status">
-			<img class = "type" src = "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/element/002.jpg"></img>
-			<img class = "weapon" src = "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/003.jpg"></img>
-			<img class = "tactic" src = "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/002.jpg"></img>
-		</div>
-	</div>
-</div>
-  -->
-
+<!-- <button id = "btn1"	onclick="btn1_Click();">버튼1</button> -->
 
 
 </body>
