@@ -1,0 +1,97 @@
+	@font-face { font-family: 'paybooc-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+	.content{
+		width: 1000px;
+	}
+
+	.header{
+		width: 950px;
+		height: 46px;
+		font-family: 'paybooc-Bold';
+		font-size: 40;
+		border: 5px solid black;
+		padding: 10px;
+		margin-bottom: 10px;
+		background-color: rgba(0,0,0, 0.2);
+		clear:left;
+	}
+
+	.content{
+		width: 1000px;
+		float: left;
+		padding: 5px;
+		padding-left: 10px;
+	}
+
+	.wrapper{
+		float: left;
+		width : 110px; height : 170px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	.border{
+		width: 100px; height: 100px;
+		border: 5px solid;
+	}
+
+	img.ch_img{
+		position: absolute;
+		width: 100px;
+	}
+
+	.box_opacity{
+		position: absolute; 
+		background-color: black;
+		width : 100px; height : 100px; 
+	}
+
+	.text{
+		width: 110px; 
+		font-family: 'paybooc-Bold';
+		font-size: 23;
+		text-align: center;
+	}
+
+	.text div{
+		display: table-cell; 
+		vertical-align: bottom; 
+		text-align :right; 
+	}
+
+	.info{
+		position: relative;
+		left: -12px; top: -13px;
+	}
+	.attr{
+		float: left;
+		width: 30px; height: 30px;
+		border-radius: 50%;
+		margin-right: 2px;
+	}
+
+	.weapon{
+		float: left;
+		width: 27px; height: 27px;
+		border-radius: 50%;
+		border: 1px solid black;
+		margin-right: 2px;
+	}
+
+	.tactic{
+		float: left;
+		width: 30px; height: 30px;
+		border-radius: 50%;
+	}
+	
+	a{
+		color: white;
+		text-decoration: none;
+	}
+
+	/*	.text:hover{
+		opacity: 0.3;
+		-webkit-transition-property: opacity;
+		-webkit-transition-duration: 0.2s;
+		-webkit-transition-timing-function: ease;
+	}*/
