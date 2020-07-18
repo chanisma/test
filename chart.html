@@ -27,6 +27,20 @@
 		</div>
 	</div>
 
+	<div id = "sidebar"> 
+		<button id = "show_all" class = "btn">모두 보기</button> 
+		<button id = "show_only_on" class = "btn">등장 캐릭터만 보기</button>
+		<button id = "machine_only" class = "btn">기계 속성 캐릭터</button>
+		<button id = "life_only" class = "btn">생체 속성 캐릭터</button>
+		<button id = "spirit_only" class = "btn">영능 속성 캐릭터</button>
+		<button id = "quarantine_only" class = "btn">방역 속성 캐릭터</button>
+		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
+<!-- 		<button id = "shotgun" class = "btn">침식 속성 캐릭터</button>
+		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
+		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
+		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
+		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button> -->
+	</div>
 
 	<script>
 		function createDiv(str, cname){
@@ -92,6 +106,85 @@
 				}
 			}
 		}
+		var btn_appear = 1;
+
+		var btn = document.getElementById('show_only_on');
+		btn.addEventListener("click", function(){
+			btn_appear = 0;
+			for(var i in character){
+				if (character[i].appear == off){
+					$(wrapper[i]).hide("normal");
+				}
+			}
+		});
+
+		var btn = document.getElementById('show_all');
+		btn.addEventListener("click", function(){
+			btn_appear = 1;
+			for(var i in character){
+				$(wrapper[i]).show("normal");
+			}
+		});
+
+		var btn = document.getElementById('machine_only');
+		btn.addEventListener("click", function(){
+			for(var i in character){
+				if (character[i].attr != machine)
+					$(wrapper[i]).hide("normal");
+				if (btn_appear == 1 && character[i].attr == machine)
+					$(wrapper[i]).show("normal");
+				if (btn_appear == 0 && character[i].attr == machine && character[i].appear == on)
+					$(wrapper[i]).show("normal");
+			}
+		})
+
+		var btn = document.getElementById('life_only');
+		btn.addEventListener("click", function(){
+			for(var i in character){
+				if (character[i].attr != life)
+					$(wrapper[i]).hide("normal");
+				if (btn_appear == 1 && character[i].attr == life)
+					$(wrapper[i]).show("normal");
+				if (btn_appear == 0 && character[i].attr == life && character[i].appear == on)
+					$(wrapper[i]).show("normal");
+			}
+		})
+
+		var btn = document.getElementById('spirit_only');
+		btn.addEventListener("click", function(){
+			for(var i in character){
+				if (character[i].attr != spirit)
+					$(wrapper[i]).hide("normal");
+				if (btn_appear == 1 && character[i].attr == spirit)
+					$(wrapper[i]).show("normal");
+				if (btn_appear == 0 && character[i].attr == spirit && character[i].appear == on)
+					$(wrapper[i]).show("normal");
+			}
+		})
+
+		var btn = document.getElementById('quarantine_only');
+		btn.addEventListener("click", function(){
+			for(var i in character){
+				if (character[i].attr != quarantine)
+					$(wrapper[i]).hide("normal");
+				if (btn_appear == 1 && character[i].attr == quarantine)
+					$(wrapper[i]).show("normal");
+				if (btn_appear == 0 && character[i].attr == quarantine && character[i].appear == on)
+					$(wrapper[i]).show("normal");
+			}
+		})
+
+		var btn = document.getElementById('erode_only');
+		btn.addEventListener("click", function(){
+			for(var i in character){
+				if (character[i].attr != erode)
+					$(wrapper[i]).hide("normal");
+				if (btn_appear == 1 && character[i].attr == erode)
+					$(wrapper[i]).show("normal");
+				if (btn_appear == 0 && character[i].attr == erode && character[i].appear == on)
+					$(wrapper[i]).show("normal");
+			}
+		})
 	</script>
 </body>
 
