@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src = "https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src = "db.js"></script> 
+<script src = "func.js"></script>
 </head>
 
 <body>
@@ -38,165 +39,190 @@
 	</div>
 
 	<div id = "sidebar"> 
-		<button id = "show_all" class = "btn">모두 보기</button> 
-		<button id = "show_only_on" class = "btn">등장 캐릭터만 보기</button>
-		<button id = "machine_only" class = "btn">기계 속성 캐릭터</button>
-		<button id = "life_only" class = "btn">생체 속성 캐릭터</button>
-		<button id = "spirit_only" class = "btn">영능 속성 캐릭터</button>
-		<button id = "quarantine_only" class = "btn">방역 속성 캐릭터</button>
-		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
-<!-- 		<button id = "shotgun" class = "btn">침식 속성 캐릭터</button>
-		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
-		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
-		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button>
-		<button id = "erode_only" class = "btn">침식 속성 캐릭터</button> -->
+		<div class = "optcat">
+			<button id = "show_all" class = "blob-btn">
+				모두 보기
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "show_only_on" class = "blob-btn">
+				출현 캐릭터만 보기
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+		</div>
+
+		<div class = "optcat">
+			<button id = "machine_only" class = "blob-btn">기계
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "life_only" class = "blob-btn">생체
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "spirit_only" class = "blob-btn">영능
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "quarantine_only" class = "blob-btn">방역
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "erode_only" class = "blob-btn">침식
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "attr_all" class = "blob-btn">모든 속성
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+		</div>
+		<div class = "optcat">
+			<button id = "pistol_only" class = "blob-btn">
+				권총
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "assault_only" class = "blob-btn">돌격소총
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "shotgun_only" class = "blob-btn">산탄총
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "sniper_only" class = "blob-btn">저격총
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "heavy_only" class = "blob-btn">중화기
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+			<button id = "weapon_all" class = "blob-btn">모든 무기
+				<span class="blob-btn__inner">
+			    	<span class="blob-btn__blobs">
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+				        <span class="blob-btn__blob"></span>
+      				</span>
+      			</span>
+      		</button>
+		</div>
 	</div>
 
+
 	<script>
-		function createDiv(str, cname){
-			var div = document.createElement('div');
-			div.innerHTML = str;
-			div.className = cname;
-			return div;
-		};
-
-		function createLink(address){
-			var temp = document.createElement('a');
-			temp.href = address;
-			return temp;
-		}
-
-		function createImage(address, cname){
-			var temp = document.createElement('img');
-			temp.src = address;
-			temp.className = cname;
-			return temp;
-		}
-
-		var content = document.getElementsByClassName("content");
-
-		var wrapper = [];
-		var link = [];
-		var border = [];
-		var image = [];
-		var box_opacity = [];
-		var info = [];
-		var attr = [];
-		var weapon = [];
-		var tactic = [];
-		var text = [];
-
+		//초기화
 		for(var i = 0; i < 4; i++){
-
 			for(var j in character){
 				if(character[j].rank == i+1){
-					wrapper[j] = createDiv('', 'wrapper');
-					link[j] = createLink(character[j].guide);
-					border[j] = createDiv('', 'border');
-					border[j].style.border = "5pt solid " + character[j].rarity;
-					image[j] = createImage(character[j].picture, 'ch_img');
-					box_opacity[j] = createDiv('', 'box_opacity');
-					box_opacity[j].style.opacity = character[j].appear;
-					info[j] = createDiv('', 'info');
-					attr[j] = createImage(character[j].attr, 'attr');
-					weapon[j] = createImage(character[j].weapon, 'weapon');
-					tactic[j] = createImage(character[j].tactic, 'tactic');
-					text[j] = createDiv(character[j].class + "<br>" + character[j].name, 'text');
-
-					content[i].appendChild(wrapper[j]);
-						wrapper[j].appendChild(link[j]);
-							link[j].appendChild(border[j]);
-								border[j].appendChild(image[j]);
-								border[j].appendChild(box_opacity[j]);
-								border[j].appendChild(info[j]);
-									info[j].appendChild(attr[j]);
-									info[j].appendChild(weapon[j]);
-									info[j].appendChild(tactic[j]);
-						wrapper[j].appendChild(text[j]);
+					create(j);
 				}
 			}
 		}
-		var btn_appear = 1;
 
-		var btn = document.getElementById('show_only_on');
-		btn.addEventListener("click", function(){
-			btn_appear = 0;
-			for(var i in character){
-				if (character[i].appear == off){
-					$(wrapper[i]).hide("normal");
-				}
-			}
-		});
+		var image = ["https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic];
+		var btn = document.getElementsByClassName("blob-btn");
+		var btn_image = [];
 
-		var btn = document.getElementById('show_all');
-		btn.addEventListener("click", function(){
-			btn_appear = 1;
-			for(var i in character){
-				$(wrapper[i]).show("normal");
-			}
-		});
-
-		var btn = document.getElementById('machine_only');
-		btn.addEventListener("click", function(){
-			for(var i in character){
-				if (character[i].attr != machine)
-					$(wrapper[i]).hide("normal");
-				if (btn_appear == 1 && character[i].attr == machine)
-					$(wrapper[i]).show("normal");
-				if (btn_appear == 0 && character[i].attr == machine && character[i].appear == on)
-					$(wrapper[i]).show("normal");
-			}
-		})
-
-		var btn = document.getElementById('life_only');
-		btn.addEventListener("click", function(){
-			for(var i in character){
-				if (character[i].attr != life)
-					$(wrapper[i]).hide("normal");
-				if (btn_appear == 1 && character[i].attr == life)
-					$(wrapper[i]).show("normal");
-				if (btn_appear == 0 && character[i].attr == life && character[i].appear == on)
-					$(wrapper[i]).show("normal");
-			}
-		})
-
-		var btn = document.getElementById('spirit_only');
-		btn.addEventListener("click", function(){
-			for(var i in character){
-				if (character[i].attr != spirit)
-					$(wrapper[i]).hide("normal");
-				if (btn_appear == 1 && character[i].attr == spirit)
-					$(wrapper[i]).show("normal");
-				if (btn_appear == 0 && character[i].attr == spirit && character[i].appear == on)
-					$(wrapper[i]).show("normal");
-			}
-		})
-
-		var btn = document.getElementById('quarantine_only');
-		btn.addEventListener("click", function(){
-			for(var i in character){
-				if (character[i].attr != quarantine)
-					$(wrapper[i]).hide("normal");
-				if (btn_appear == 1 && character[i].attr == quarantine)
-					$(wrapper[i]).show("normal");
-				if (btn_appear == 0 && character[i].attr == quarantine && character[i].appear == on)
-					$(wrapper[i]).show("normal");
-			}
-		})
-
-		var btn = document.getElementById('erode_only');
-		btn.addEventListener("click", function(){
-			for(var i in character){
-				if (character[i].attr != erode)
-					$(wrapper[i]).hide("normal");
-				if (btn_appear == 1 && character[i].attr == erode)
-					$(wrapper[i]).show("normal");
-				if (btn_appear == 0 && character[i].attr == erode && character[i].appear == on)
-					$(wrapper[i]).show("normal");
-			}
-		})
+		for(i = 0; i < btn.length; i++){
+			btn[i].addEventListener("click", btn_listener);
+			btn_image[i] = createImage(image[i], 'btn_picture');
+			btn[i].insertBefore(btn_image[i], btn[i].firstChild);
+		}
 
 	</script>
+
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <defs>
+	    <filter id="goo">
+	      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+	      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+	      <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+	    </filter>
+	  </defs>
+	</svg>
 
 </body>
 

@@ -96,38 +96,152 @@
 
 	#sidebar{
 		float: left;
+		width: 400px;
 	}
 
-	.btn{
-		font-size: 30;
-		padding: 5px;
-		display: block;
+	.optcat{
+		margin-bottom : 20px;
 		margin-top: 10px;
-	}
-	#show_only_on{
 
 	}
 
-	#show_all{
+/*	.btn{
+		font-family: 'paybooc-Bold';
+		font-size: 25;
+		padding: 5px;
+		background-color : white;
+		border: 2px solid #4CAF50;
+		margin-bottom: 2px;
+		margin-right: 10px;
+	}*/
 
+	#assault_only{
+	    padding-right: 36px;
 	}
 
-	#machine_only{
-
+	#sniper_only{
+	    padding-right: 42px;
 	}
 
-	#life_only{
-
+	.btn_picture{
+		height: 28px;
+		border-radius: 50%;
+		margin-right: 5px;
+		margin-top: 1px;
+		position: relative;
+		top: 6px;
 	}
 
-	#spirit_only{
-
+	.blob-btn {
+		  z-index: 1;
+		  position: relative;
+		  padding: 14px 40px 11px 18px;
+		  margin-bottom: 11px;
+		  text-align: left;
+		  color: #4CAF50;
+		  font-family: 'paybooc-Bold';
+		  font-size: 25px;
+		  background-color: transparent;
+		  outline: none;
+		  border: none;
+		  -webkit-transition: color 0.5s;
+		  transition: color 0.5s;
+		  cursor: pointer;
 	}
-
-	#quarantine_only{
-
+	.blob-btn:before {
+	  content: "";
+	  z-index: 1;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  border: 4px solid #4CAF50;
 	}
-
-	#erode_only{
-
+	.blob-btn:after {
+	  content: "";
+	  z-index: -2;
+	  position: absolute;
+	  left: 9px;
+	  top: 9px;
+	  width: 100%;
+	  height: 100%;
+	  border: 6px solid white;
+	  -webkit-transition: all 0.3s 0.2s;
+	  transition: all 0.3s 0.2s;
+	}
+	.blob-btn:hover {
+	  color: #222;
+	}
+	.blob-btn:hover:after {
+	  -webkit-transition: all 0.3s;
+	  transition: all 0.3s;
+	  left: 0;
+	  top: 0;
+	}
+	.blob-btn__inner {
+	  z-index: -1;
+	  overflow: hidden;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	}
+	.blob-btn__blobs {
+	  position: relative;
+	  display: block;
+	  height: 100%;
+	  -webkit-filter: url("#goo");
+	          filter: url("#goo");
+	}
+	.blob-btn__blob {
+	  position: absolute;
+	  top: 6px;
+	  width: 25%;
+	  height: 100%;
+	  background: #4CAF50;
+	  border-radius: 100%;
+	  -webkit-transform: translate3d(0, 150%, 0) scale(1.7);
+	          transform: translate3d(0, 150%, 0) scale(1.7);
+	  -webkit-transition: -webkit-transform 0.45s;
+	  transition: -webkit-transform 0.45s;
+	  transition: transform 0.45s;
+	  transition: transform 0.45s, -webkit-transform 0.45s;
+	}
+	@supports ((-webkit-filter: url("#goo")) or (filter: url("#goo"))) {
+	  .blob-btn__blob {
+	    -webkit-transform: translate3d(0, 150%, 0) scale(1.4);
+	            transform: translate3d(0, 150%, 0) scale(1.4);
+	  }
+	}
+	.blob-btn__blob:nth-child(1) {
+	  left: 0%;
+	  -webkit-transition-delay: 0s;
+	          transition-delay: 0s;
+	}
+	.blob-btn__blob:nth-child(2) {
+	  left: 30%;
+	  -webkit-transition-delay: 0.08s;
+	          transition-delay: 0.08s;
+	}
+	.blob-btn__blob:nth-child(3) {
+	  left: 60%;
+	  -webkit-transition-delay: 0.16s;
+	          transition-delay: 0.16s;
+	}
+	.blob-btn__blob:nth-child(4) {
+	  left: 90%;
+	  -webkit-transition-delay: 0.24s;
+	          transition-delay: 0.24s;
+	}
+	.blob-btn:hover .blob-btn__blob {
+	  -webkit-transform: translateZ(0) scale(1.7);
+	          transform: translateZ(0) scale(1.7);
+	}
+	@supports ((-webkit-filter: url("#goo")) or (filter: url("#goo"))) {
+	  .blob-btn:hover .blob-btn__blob {
+	    -webkit-transform: translateZ(0) scale(1.4);
+	            transform: translateZ(0) scale(1.4);
+	  }
 	}
