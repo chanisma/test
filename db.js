@@ -80,14 +80,8 @@ var character = [
 
 
 	function add_character(classN, name, attr, weapon, tactic, guide, appear, rarity, picture, rank, selected){
-		if(rarity == star4){
-			character.unshift({classN, name, attr, weapon, tactic, guide, appear, rarity, picture, rank, selected});
-			character[0].class = classN;
-		}
-		else if(rarity == star3)
-			character.push({classN, name, attr, weapon, tactic, guide, appear, rarity, picture, rank, selected});
-			character[character.length-1].class = classN;
-
+		character.push({classN, name, attr, weapon, tactic, guide, appear, rarity, picture, rank, selected});
+		character[character.length-1].class = classN;
 	}
 
 	add_character('수영복', '주노', quarantine, assault, power, guide_dir + 'chara-69', off, star4, picture_dir + '069.jpg', 2, 1);
@@ -99,5 +93,62 @@ var character = [
 	add_character('수영복', '로코코', machine, pistol, power, guide_dir + 'chara-97', off, star4, picture_dir + '097.jpg', 2, 1);
 	add_character('차이나', '지무유', quarantine, shotgun, onset, guide_dir + 'chara-103', off, star4, picture_dir + '103.jpg', 2, 1);
 	add_character('VD', '이코스', erode, assault, support, guide_dir + 'chara-105', off, star4, picture_dir + '105.jpg', 2, 1);
-	add_character('사무관', '로코코', life, heavy, onset, guide_dir + 'chara-110', off, star4, picture_dir + '110.jpg', 2, 1);
+	add_character('오피스', '로코코', life, heavy, onset, guide_dir + 'chara-110', off, star4, picture_dir + '110.jpg', 2, 1);
 	add_character('생일', '소쇼우신', erode, sniper, heal, guide_dir + 'chara-104', off, star4, picture_dir + '104.jpg', 2, 1);
+	add_character('기갑공격', '시쥬', life, shotgun, power, guide_dir + 'chara-116', off, star4, picture_dir + '116.jpg', 2, 1);
+	add_character('수영복', '그루니에', erode, sniper, support, guide_dir + 'chara-122', off, star4, picture_dir + '122.jpg', 2, 1);
+	add_character('데이트', '아이린', spirit, shotgun, support, guide_dir + 'chara-135', off, star4, picture_dir + '135.jpg', 2, 1);
+	add_character('서약', '지무유', erode, heavy, support, guide_dir + 'chara-130', off, star4, picture_dir + '130.jpg', 2, 1);
+	add_character('생일', '로코코', quarantine, shotgun, power, guide_dir + 'chara-136', off, star4, picture_dir + '136.jpg', 2, 1);
+	add_character('데이트', '시쥬', life, pistol, support, guide_dir + 'chara-138', off, star4, picture_dir + '138.jpg', 2, 1);
+	add_character('체스', '이코스', spirit, pistol, power, guide_dir + 'chara-86', off, star3, picture_dir + '086.jpg', 2, 1);
+	add_character('수영복', '아이린', machine, heavy, support, guide_dir + 'chara-98', off, star3, picture_dir + '098.jpg', 2, 1);
+
+	add_character('수영복', '이코스', quarantine, heavy, support, guide_dir + 'chara-68', off, star4, picture_dir + '068.jpg', 3, 1);
+	add_character('전술장비', '지무유', life, sniper, support, guide_dir + 'chara-76', off, star4, picture_dir + '076.jpg', 3, 1);
+	add_character('차이나', '문', spirit, assault, support, guide_dir + 'chara-100', off, star4, picture_dir + '100.jpg', 3, 1);
+	add_character('생일', '아이린', erode, sniper, onset, guide_dir + 'chara-101', off, star4, picture_dir + '101.jpg', 3, 1);
+	add_character('전술장비', '소쇼우신', quarantine, heavy, support, guide_dir + 'chara-106', off, star4, picture_dir + '106.jpg', 3, 1);
+	add_character('전술장비', '주노', quarantine, sniper, onset, guide_dir + 'chara-107', off, star4, picture_dir + '107.jpg', 3, 1);
+	add_character('오피스', '아이린', life, assault, power, guide_dir + 'chara-112', off, star4, picture_dir + '112.jpg', 3, 1);
+	add_character('기갑공격', '아니야', machine, sniper, support, guide_dir + 'chara-119', off, star4, picture_dir + '119.jpg', 3, 1);
+	add_character('수영복', '유키', erode, assault, power, guide_dir + 'chara-121', off, star4, picture_dir + '121.jpg', 3, 1);
+	add_character('생일', '주노', machine, assault, support, guide_dir + 'chara-120', off, star4, picture_dir + '120.jpg', 3, 1);
+	add_character('동화', '이코스', spirit, sniper, onset, guide_dir + 'chara-125', off, star4, picture_dir + '125.jpg', 3, 1);
+	add_character('동화', '주노', spirit, shotgun, support, guide_dir + 'chara-126', off, star4, picture_dir + '126.jpg', 3, 1);
+	add_character('서약', '주노', spirit, pistol, power, guide_dir + 'chara-132', off, star4, picture_dir + '132.jpg', 3, 1);
+	add_character('데이트', '리타', erode, heavy, power, guide_dir + 'chara-137', off, star4, picture_dir + '137.jpg', 3, 1);
+	add_character('수영복', '문', quarantine, pistol, defense, guide_dir + 'chara-71', off, star3, picture_dir + '071.jpg', 3, 1);
+	add_character('전술장비', '로코코', life, heavy, defense, guide_dir + 'chara-78', off, star3, picture_dir + '078.jpg', 3, 1);
+	add_character('잠옷', '소쇼우신', erode, assault, power, guide_dir + 'chara-82', off, star3, picture_dir + '082.jpg', 3, 1);
+	add_character('잠옷', '주노', erode, heavy, defense, guide_dir + 'chara-83', off, star3, picture_dir + '083.jpg', 3, 1);
+	add_character('체스', '지무유', spirit, assault, support, guide_dir + 'chara-87', off, star3, picture_dir + '087.jpg', 3, 1);
+	add_character('크리스마스', '이코스', life, sniper, onset, guide_dir + 'chara-90', off, star3, picture_dir + '090.jpg', 3, 1);
+	add_character('전술장비', '이코스', quarantine, shotgun, heal, guide_dir + 'chara-108', off, star3, picture_dir + '108.jpg', 3, 1);
+	add_character('오피스', '리타', life, shotgun, support, guide_dir + 'chara-113', off, star3, picture_dir + '113.jpg', 3, 1);
+	add_character('사복', '아니야', spirit, assault, onset, guide_dir + 'chara-118', off, star3, picture_dir + '118.jpg', 3, 1);
+	add_character('수영복', '코넬리아', erode, pistol, power, guide_dir + 'chara-123', off, star3, picture_dir + '123.jpg', 3, 1);
+	add_character('수영복', '시쥬', erode, heavy, support, guide_dir + 'chara-124', off, star3, picture_dir + '124.jpg', 3, 1);
+	add_character('동화', '로코코', spirit, assault, heal, guide_dir + 'chara-127', off, star3, picture_dir + '127.jpg', 3, 1);
+	add_character('동화', '그루니에', spirit, heavy, support, guide_dir + 'chara-128', off, star3, picture_dir + '128.jpg', 3, 1);
+	add_character('서약', '지무유', erode, heavy, support, guide_dir + 'chara-129', off, star3, picture_dir + '129.jpg', 3, 1);
+	add_character('서약', '주노', spirit, pistol, power, guide_dir + 'chara-131', off, star3, picture_dir + '131.jpg', 3, 1);
+	
+	add_character('잠옷', '문', erode, sniper, power, guide_dir + 'chara-80', off, star4, picture_dir + '080.jpg', 4, 1);
+	add_character('잠옷', '유키', erode, pistol, support, guide_dir + 'chara-81', off, star4, picture_dir + '081.jpg', 4, 1);
+	add_character('차이나', '지무카', erode, pistol, defense, guide_dir + 'chara-102', off, star4, picture_dir + '102.jpg', 4, 1);
+	add_character('생일', '지무카', life, pistol, power, guide_dir + 'chara-133', off, star4, picture_dir + '133.jpg', 4, 1);
+	add_character('수영복', '소쇼우신', quarantine, shotgun, support, guide_dir + 'chara-70', off, star3, picture_dir + '070.jpg', 4, 1);
+	add_character('전술장비', '코넬리아', life, sniper, power, guide_dir + 'chara-79', off, star3, picture_dir + '079.jpg', 4, 1);
+	add_character('설날', '유키', life, assault, heal, guide_dir + 'chara-95', off, star3, picture_dir + '095.jpg', 4, 1);
+	add_character('수영복', '지무카', machine, sniper, defense, guide_dir + 'chara-99', off, star3, picture_dir + '099.jpg', 4, 1);
+	add_character('전술장비', '문', quarantine, assault, power, guide_dir + 'chara-109', off, star3, picture_dir + '109.jpg', 4, 1);
+	add_character('오피스', '지무카', life, pistol, support, guide_dir + 'chara-111', off, star3, picture_dir + '111.jpg', 4, 1);
+	add_character('사복', '시쥬', erode, sniper, defense, guide_dir + 'chara-115', off, star3, picture_dir + '115.jpg', 4, 1);
+	// add_character('', '', , , , guide_dir + 'chara-', off, star3, picture_dir + '.jpg', 4, 1);
+	// add_character('', '', , , , guide_dir + 'chara-', off, star3, picture_dir + '.jpg', 4, 1);
+	// add_character('', '', , , , guide_dir + 'chara-', off, star3, picture_dir + '.jpg', 4, 1);
+	// add_character('', '', , , , guide_dir + 'chara-', off, star3, picture_dir + '.jpg', 4, 1);
+
+
+
