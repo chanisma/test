@@ -40,25 +40,34 @@
 
 	<div id = "sidebar"> 
 		<div class = "optcat">
-			<button id = "show_all" class = "btn">모두 보기</button>
-			<button id = "show_only_on" class = "btn">출현 캐릭터만 보기</button>
+			<button id = "show_all" class = "btn">모든 캐릭터 보기</button>
+			<button id = "show_on" class = "btn">출현 캐릭터만 보기</button>
+			<button id = "reset" class = "btn">리셋</button>
 		</div>
 
 		<div class = "optcat">
-			<button id = "machine_only" class = "btn">기계</button>
-			<button id = "life_only" class = "btn">생체</button>
-			<button id = "spirit_only" class = "btn">영능</button>
-			<button id = "quarantine_only" class = "btn">방역</button>
-			<button id = "erode_only" class = "btn">침식</button>
+			<button id = "machine" class = "btn">기계</button>
+			<button id = "life" class = "btn">생체</button>
+			<button id = "spirit" class = "btn">영능</button>
+			<button id = "quarantine" class = "btn">방역</button>
+			<button id = "erode" class = "btn">침식</button>
 			<button id = "attr_all" class = "btn">모든 속성</button>
 		</div>
-		<div class = "optcat">
-			<button id = "pistol_only" class = "btn">권총</button>
-			<button id = "assault_only" class = "btn">돌격소총</button>
-			<button id = "shotgun_only" class = "btn">산탄총</button>
-			<button id = "sniper_only" class = "btn">저격총</button>
-			<button id = "heavy_only" class = "btn">중화기</button>
+		<div class = "optcat" id = "weapon">
+			<button id = "pistol" class = "btn">권총</button>
+			<button id = "assault" class = "btn">돌격소총</button>
+			<button id = "shotgun" class = "btn">산탄총</button>
+			<button id = "sniper" class = "btn">저격총</button>
+			<button id = "heavy" class = "btn">중화기</button>
 			<button id = "weapon_all" class = "btn">모든 무기</button>
+		</div>
+		<div class = "optcat">
+			<button id = "power" class = "btn">화력</button>
+			<button id = "onset" class = "btn">습격</button>
+			<button id = "support" class = "btn">보조</button>
+			<button id = "heal" class = "btn">치료</button>
+			<button id = "defense" class = "btn">방어</button>
+			<button id = "tactic_all" class = "btn">모든 역할</button>
 		</div>
 	</div>
 
@@ -72,8 +81,6 @@
 				}
 			}
 		}
-
-		var btn = document.getElementsByClassName("btn");
 
 		for(i = 0; i < btn.length; i++){
 			createButton(i);

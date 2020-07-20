@@ -33,6 +33,7 @@
 
 	const opt_pic = 'https://static.thenounproject.com/png/773549-200.png'
 
+
 var character = [
 		//4성
 		{class: '전술장비', name: '유키', attr: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-1', appear: on, rarity: 4, picture: picture_dir + '001.jpg', rank: 1, selected : 1},
@@ -67,7 +68,7 @@ var character = [
 		{class: '사복', name: '주노', attr: quarantine, weapon: sniper, tactic: onset, guide: guide_dir + 'chara-24', appear: on, rarity: 3, picture: picture_dir + '024.jpg', rank: 2, selected : 1},
 		{class: '사복', name: '그루니에', attr: spirit, weapon: assault, tactic: heal, guide: guide_dir + 'chara-12', appear: on, rarity: 3, picture: picture_dir + '012.jpg', rank: 3, selected : 1},
 		{class: '전술장비', name: '리타', attr: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-64', appear: on, rarity: 3, picture: picture_dir + '064.jpg', rank: 2, selected : 1},
-		{class: '메이드복', name: '그루니에', attr: machine, weapon: pistol, tactic: support, guide: guide_dir + 'chara-19', appear: on, rarity: 3, picture: picture_dir + '019.jpg', rank: 4, selected : 1},
+		{class: '메이드복', name: '그루니에', attr: machine, weapon: pistol, tactic: support, guide: guide_dir + 'chara-19', appear: on, rarity: 3, picture: picture_dir + '019.jpg', rank: 3, selected : 1},
 		{class: '사복', name: '지무카', attr: life, weapon: shotgun, tactic: heal, guide: guide_dir + 'chara-13', appear: on, rarity: 3, picture: picture_dir + '013.jpg', rank: 4, selected : 1},
 		{class: '사복', name: '아이린', attr: life, weapon: assault, tactic: support, guide: guide_dir + 'chara-11', appear: on, rarity: 3, picture: picture_dir + '011.jpg', rank: 4, selected : 1},
 		{class: '사복', name: '로코코', attr: erode, weapon: pistol, tactic: support, guide: guide_dir + 'chara-22', appear: on, rarity: 3, picture: picture_dir + '022.jpg', rank: 4, selected : 1},
