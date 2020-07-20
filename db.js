@@ -44,7 +44,7 @@ var character = [
 		{class: '전술장비', name: '아이린', attr: machine, weapon: pistol, tactic: power, guide: guide_dir + 'chara-2', appear: on, rarity: 4, picture: picture_dir + '002.jpg', rank: 2, selected : 1},
 		{class: '메이드복', name: '지무카', attr: spirit, weapon: assault, tactic: support, guide: guide_dir + 'chara-3', appear: on, rarity: 4, picture: picture_dir + '003.jpg', rank: 2, selected : 1},
 		{class: '메이드복', name: '지무유', attr: spirit, weapon: pistol, tactic: power, guide: guide_dir + 'chara-6', appear: on, rarity: 4, picture: picture_dir + '006.jpg', rank: 3, selected : 1},
-		{class: '메이드복', name: '소쇼우신', attr: machine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-5', appear: on, rarity: 4, picture: picture_dir + '005.jpg', rank: 2, selected : 1},
+		{class: '메이드복', name: '소쇼우신', attr: machine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-5', appear: on, rarity: 4, picture: picture_dir + '005.jpg', rank: 3, selected : 1},
 		{class: '메이드복', name: '문', attr: life, weapon: heavy, tactic: power, guide: guide_dir + 'chara-4', appear: on, rarity: 4, picture: picture_dir + '004.jpg', rank: 2, selected : 1},
 		{class: '원력오염', name: '지무카', attr: spirit, weapon: assault, tactic: power, guide: guide_dir + 'chara-66', appear: on, rarity: 4, picture: picture_dir + '066.jpg', rank: 3, selected : 1},
 		{class: '서약', name: '그루니에', attr: life, weapon: heavy, tactic: defense, guide: guide_dir + 'chara-72', appear: on, rarity: 4, picture: picture_dir + '072.jpg', rank: 3, selected : 1},
