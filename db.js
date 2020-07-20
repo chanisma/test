@@ -33,16 +33,6 @@
 
 	const opt_pic = 'https://static.thenounproject.com/png/773549-200.png'
 
-메이드 문 A -> S
-전술장비 로코코 A -> S
-오피스 로코코 S -> A
-기갑공격 시쥬 S -> A
-데이트 시쥬 S -> A
-체스 그루니에 S -> A
-메이드복 지무유 S -> A
-메이드복 지무카 A -> S
-체스 코넬리아 SS -> S
-수영복 시쥬 A -> S
 
 var character = [
 		//4성
