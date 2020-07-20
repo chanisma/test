@@ -41,11 +41,28 @@
 			wrapper[j].appendChild(text[j]);
 		}
 
-		function createButton(str, cname){
-			var div = document.createElement('button');
-			div.innerHTML = str;
-			div.className = cname;
-			return div;
+		function createButton(i){
+			var image = ["https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic];
+			var btn_image = [];
+
+			btn[i].addEventListener("click", btn_listener);
+			btn_image[i] = createImage(image[i], 'btn_picture');
+			btn[i].insertBefore(btn_image[i], btn[i].firstChild);
+			
+			var temp = createSpan('blob-btn__inner');
+			btn[i].appendChild(temp);
+			var temp1 = createSpan('blob-btn__blobs');
+			temp.appendChild(temp1);
+			for(var j = 0; j < 4; j++){
+				var temp = createSpan('blob-btn__blob');
+				temp1.appendChild(temp);
+			}
+		}
+
+		function createSpan(cname){
+			var temp = document.createElement('span');
+			temp.className = cname;
+			return temp;
 		}
 
 		function createDiv(str, cname){
