@@ -40,12 +40,6 @@
 
 	<div id = "sidebar"> 
 		<div class = "optcat">
-			<button id = "show_all" class = "btn">모든 캐릭터 보기</button>
-			<button id = "show_on" class = "btn">출현 캐릭터만 보기</button>
-			<button id = "reset" class = "btn">리셋</button>
-		</div>
-
-		<div class = "optcat">
 			<button id = "machine" class = "btn">기계</button>
 			<button id = "life" class = "btn">생체</button>
 			<button id = "spirit" class = "btn">영능</button>
@@ -61,13 +55,18 @@
 			<button id = "heavy" class = "btn">중화기</button>
 			<button id = "weapon_all" class = "btn">모든 무기</button>
 		</div>
-		<div class = "optcat">
+		<div class = "optcat" id = "tactic">
 			<button id = "power" class = "btn">화력</button>
 			<button id = "onset" class = "btn">습격</button>
 			<button id = "support" class = "btn">보조</button>
 			<button id = "heal" class = "btn">치료</button>
 			<button id = "defense" class = "btn">방어</button>
 			<button id = "tactic_all" class = "btn">모든 역할</button>
+		</div>
+		<div class = "optcat">
+			<button id = "show_all" class = "btn">모든 캐릭터 보기</button>
+			<button id = "show_on" class = "btn">출현 캐릭터만 보기</button>
+			<button id = "reset" class = "btn">리셋</button>
 		</div>
 	</div>
 
@@ -86,7 +85,25 @@
 			createButton(i);
 		}
 
+		var filter = "win16|win32|win64|mac";
 
+		if(navigator.platform){
+			if(0 > filter.indexOf(navigator.platform.toLowerCase())){
+				var temp = document.getElementsbyClassName("optcat");
+				temp.style.display = "inline-block";
+				temp.style.marginRight = '-25px';
+
+				var temp = document.getElementbyId("sidebar");
+				temp.style.width = '920px';
+
+				var temp = document.getElementbyId("tactic");
+				temp.style.marginLeft = '67px'
+		}
+		else{
+			//PC
+		}
+
+		}
 	</script>
 
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">

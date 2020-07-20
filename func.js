@@ -11,7 +11,9 @@
 		var tactic = [];
 		var text = [];
 
-		var opt_image = ["https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", opt_pic, machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic, power, onset,support, heal, defense, opt_pic];
+		var opt_image = [machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic, power, onset,support, heal, defense, opt_pic, "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", 
+		"https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", 
+		opt_pic,];
 
 
 		function create(j){
@@ -59,14 +61,14 @@
 				temp1.appendChild(temp);
 			}
 
-			btn[0].style.backgroundColor = '#4CAF50';
-			btn[0].style.color = 'black';
-			btn[8].style.backgroundColor = '#4CAF50';
-			btn[8].style.color = 'black';
-			btn[14].style.backgroundColor = '#4CAF50';
-			btn[14].style.color = 'black';
-			btn[20].style.backgroundColor = '#4CAF50';
-			btn[20].style.color = 'black';
+			btn[5].style.backgroundColor = '#4CAF50';
+			btn[5].style.color = 'black';
+			btn[11].style.backgroundColor = '#4CAF50';
+			btn[11].style.color = 'black';
+			btn[17].style.backgroundColor = '#4CAF50';
+			btn[17].style.color = 'black';
+			btn[18].style.backgroundColor = '#4CAF50';
+			btn[18].style.color = 'black';
 		}
 
 		function createSpan(cname){
@@ -227,42 +229,42 @@
 		function btn_status(attr, weapon, tactic){
 			
 			if(opt_appear == on){
-				btn[0].style.removeProperty("background-color");
-				btn[0].style.removeProperty("color");
-				btn[1].style.backgroundColor = '#4CAF50';
-				btn[1].style.color = 'black';
+				btn[18].style.removeProperty("background-color");
+				btn[18].style.removeProperty("color");
+				btn[19].style.backgroundColor = '#4CAF50';
+				btn[19].style.color = 'black';
 			}
 			else{
-				btn[0].style.backgroundColor = '#4CAF50';
-				btn[0].style.color = 'black';
-				btn[1].style.removeProperty("background-color");
-				btn[1].style.removeProperty("color");
+				btn[18].style.backgroundColor = '#4CAF50';
+				btn[18].style.color = 'black';
+				btn[19].style.removeProperty("background-color");
+				btn[19].style.removeProperty("color");
 			}
 			
 			if(attr != old_attr){
-				for(var i = 3; i < 9; i++){
+				for(var i = 0; i < 6; i++){
 					btn[i].style.removeProperty("background-color");
 					btn[i].style.removeProperty("color");
 				}
-				btn[attr+3].style.backgroundColor = '#4CAF50';
-				btn[attr+3].style.color = 'black';
+				btn[attr].style.backgroundColor = '#4CAF50';
+				btn[attr].style.color = 'black';
 			}
 
 			if(weapon != old_weapon){
-				for(var i = 9; i < 15; i++){
+				for(var i = 6; i < 12; i++){
 					btn[i].style.removeProperty("background-color");
 					btn[i].style.removeProperty("color");
 				}
-				btn[weapon+9].style.backgroundColor = '#4CAF50';
-				btn[weapon+9].style.color = 'black';
+				btn[weapon+6].style.backgroundColor = '#4CAF50';
+				btn[weapon+6].style.color = 'black';
 			}
 
 			if(tactic != old_tactic){
-				for(var i = 15; i < 21; i++){
+				for(var i = 12; i < 18; i++){
 					btn[i].style.removeProperty("background-color");
 					btn[i].style.removeProperty("color");
 				}
-				btn[tactic+15].style.backgroundColor = '#4CAF50';
-				btn[tactic+15].style.color = 'black';
+				btn[tactic+12].style.backgroundColor = '#4CAF50';
+				btn[tactic+12].style.color = 'black';
 			}
 		}
