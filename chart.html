@@ -10,6 +10,13 @@
 
 	gtag('config', 'UA-172922047-1');
 </script>
+
+<script>
+	var pc_device = "win16|win32|win64|mac|macintel";
+ 
+    // 접속한 디바이스 환경
+    var this_device = navigator.platform;
+</script>
 <meta charset="utf-8">
 <title>걸카페건 등급표 ver0.32</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -85,25 +92,27 @@
 			createButton(i);
 		}
 
-		var filter = "win16|win32|win64|mac";
+		if ( this_device ) {
+ 	        if ( pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ) {
+ 	        	console.log('Mobile');
 
-		if(navigator.platform){
-			if(0 > filter.indexOf(navigator.platform.toLowerCase())){
-				var temp = document.getElementsbyClassName("optcat");
-				temp.style.display = "inline-block";
-				temp.style.marginRight = '-25px';
+	            var temp = document.getElementsByClassName("optcat");
+	            for(i = 0; i < temp.length; i++){
+					temp[i].style.display = "inline-block";
+					temp[i].style.marginRight = '-25px';
+				}
 
-				var temp = document.getElementbyId("sidebar");
+				var temp = document.getElementById("sidebar");
 				temp.style.width = '920px';
 
-				var temp = document.getElementbyId("tactic");
+				var temp = document.getElementById("tactic");
 				temp.style.marginLeft = '67px'
-		}
-		else{
-			//PC
-		}
+	        } else {
+	            console.log('PC');
+	        }
+   		}
 
-		}
+
 	</script>
 
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
