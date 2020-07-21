@@ -24,6 +24,8 @@
 				border[j].style.border = "5pt solid " + star4;
 			else if(character[j].rarity == 3)
 				border[j].style.border = "5pt solid " + star3;
+			else if(character[j].rarity == 1)
+				border[j].style.border = "5pt solid " + star1;
 			image[j] = createImage(character[j].picture, 'ch_img');
 			box_opacity[j] = createDiv('', 'box_opacity');
 			box_opacity[j].style.opacity = character[j].appear;
