@@ -34,7 +34,6 @@
 
 	const opt_pic = 'https://static.thenounproject.com/png/773549-200.png'
 
-
 var character = [
 		//4성
 		{class: '전술장비', name: '유키', attr: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-1', appear: on, rarity: 4, picture: picture_dir + '001.jpg', rank: 1, selected : 1},
@@ -99,8 +98,11 @@ var character = [
 	add_character('차이나', '지무유', quarantine, shotgun, onset, guide_dir + 'chara-103', off, 4, picture_dir + '103.jpg', 2, 1);
 	add_character('데이트', '아이린', spirit, shotgun, support, guide_dir + 'chara-135', off, 4, picture_dir + '135.jpg', 2, 1);
 	add_character('서약', '유키', spirit, sniper, onset, guide_dir + 'chara-92', off, 4, picture_dir + '092.jpg', 2, 1);
+	add_character('생일', '소쇼우신', erode, sniper, heal, guide_dir + 'chara-104', off, 4, picture_dir + '104.jpg', 2, 1);
 	add_character('체스', '이코스', spirit, pistol, power, guide_dir + 'chara-86', off, 3, picture_dir + '086.jpg', 2, 1);
 	add_character('수영복', '아이린', machine, heavy, support, guide_dir + 'chara-98', off, 3, picture_dir + '098.jpg', 2, 1);
+	add_character('전술장비', '로코코', life, heavy, defense, guide_dir + 'chara-78', off, 3, picture_dir + '078.jpg', 2, 1);
+	add_character('체스', '지무유', spirit, assault, support, guide_dir + 'chara-87', off, 3, picture_dir + '087.jpg', 2, 1);
 
 	add_character('전술장비', '지무유', life, sniper, support, guide_dir + 'chara-76', off, 4, picture_dir + '076.jpg', 3, 1);
 	add_character('차이나', '문', spirit, assault, support, guide_dir + 'chara-100', off, 4, picture_dir + '100.jpg', 3, 1);
@@ -111,13 +113,10 @@ var character = [
 	add_character('전술장비', '그루니에', life, pistol, power, guide_dir + 'chara-77', off, 4, picture_dir + '077.jpg', 3, 1);
 	add_character('수영복', '리타', machine, assault, heal, guide_dir + 'chara-96', off, 4, picture_dir + '096.jpg', 3, 1);
 	add_character('VD', '이코스', erode, assault, support, guide_dir + 'chara-105', off, 4, picture_dir + '105.jpg', 3, 1);
-	add_character('생일', '소쇼우신', erode, sniper, heal, guide_dir + 'chara-104', off, 4, picture_dir + '104.jpg', 3, 1);
 	add_character('기갑공격', '시쥬', life, shotgun, power, guide_dir + 'chara-116', off, 4, picture_dir + '116.jpg', 3, 1);
 	add_character('수영복', '그루니에', erode, sniper, support, guide_dir + 'chara-122', off, 4, picture_dir + '122.jpg', 3, 1);
 	add_character('서약', '지무유', erode, heavy, support, guide_dir + 'chara-130', off, 4, picture_dir + '130.jpg', 3, 1);
 	add_character('수영복', '문', quarantine, pistol, defense, guide_dir + 'chara-71', off, 3, picture_dir + '071.jpg', 3, 1);
-	add_character('전술장비', '로코코', life, heavy, defense, guide_dir + 'chara-78', off, 3, picture_dir + '078.jpg', 3, 1);
-	add_character('체스', '지무유', spirit, assault, support, guide_dir + 'chara-87', off, 3, picture_dir + '087.jpg', 2, 1);
 	add_character('오피스', '리타', life, shotgun, support, guide_dir + 'chara-113', off, 3, picture_dir + '113.jpg', 3, 1);
 	add_character('수영복', '코넬리아', erode, pistol, power, guide_dir + 'chara-123', off, 3, picture_dir + '123.jpg', 3, 1);
 	add_character('수영복', '시쥬', erode, heavy, support, guide_dir + 'chara-124', off, 3, picture_dir + '124.jpg', 3, 1);
@@ -165,3 +164,21 @@ var character = [
 
 
 
+	// function readExcel() {
+	// 	let input = event.target;
+	// 	let reader = new FileReader();
+	
+	//     reader.onload = function () {
+ //        	let data = reader.result;
+ //        	let workBook = XLSX.read(data, { type: 'binary' });
+        	
+ //        	workBook.SheetNames.forEach(function (sheetName) {
+ //            	console.log('SheetName: ' + sheetName);
+
+ //            	let rows = XLSX.utils.sheet_to_json(workBook.Sheets[sheetName]);
+ //            	console.log(JSON.stringify(rows));
+ //        	})
+ //    	};
+
+ //    	reader.readAsBinaryString(input.files[0]);
+ //    }
