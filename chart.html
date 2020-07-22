@@ -79,6 +79,12 @@
 			<button id = "show_on" class = "btn">출현 캐릭터만 보기</button>
 			<button id = "reset" class = "btn">리셋</button>
 		</div>
+		<div class = "optcat">
+			<button id = "quick" class = "btn">구역빠른통과</button>
+			<button id = "survival" class = "btn">생존전투구역</button>
+			<button id = "damage" class = "btn">대미지전투구역</button>
+			<button id = "basic" class = "btn">일반</button>
+		</div>
 	</div>
 
 
@@ -87,7 +93,7 @@
 		for(var i = 0; i < 5; i++){
 			for(var j in character){
 				if(character[j].rank == i+1){
-					create(j);
+					create(i, j);
 				}
 			}
 		}
@@ -95,7 +101,12 @@
 		for(i = 0; i < btn.length; i++){
 			createButton(i);
 		}
+	</script>
 
+
+
+	<script>
+		//모바일
 		if ( this_device ) {
  	        if ( pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ) {
  	        	console.log('Mobile');
@@ -112,12 +123,11 @@
 				var temp = document.getElementById("tactic");
 				temp.style.marginLeft = '67px'
 	        } else {
-	            console.log('PC');
+	            //console.log('PC');
 	        }
    		}
-
-
 	</script>
+
 
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 	  <defs>
