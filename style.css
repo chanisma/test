@@ -11,13 +11,9 @@
 	}
 	.header{
 		width: 830px;
-		height: 38px;
 		font-family: 'paybooc-Bold';
-		font-size: 32;
-		border: 5px solid black;
-		padding: 10px;
+		border: 1px solid black;
 		margin-bottom: 10px;
-		background-color: rgba(0,0,0, 0.2);
 	}
 
 	.content{

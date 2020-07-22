@@ -35,6 +35,8 @@
 	const opt_pic = 'https://static.thenounproject.com/png/773549-200.png'
 
 
+
+
 var character = [
 		//4성
 		{class: '전술장비', name: '유키', attr: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-1', appear: on, rarity: 4, picture: picture_dir + '001.jpg', rank: 1, selected : 1, 		quick: 2, quick_s: 4, dmg: 3, survival: 0},

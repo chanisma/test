@@ -18,7 +18,7 @@
     var this_device = navigator.platform;
 </script>
 <meta charset="utf-8">
-<title>걸카페건 등급표 ver0.5</title>
+<title>걸카페건 등급표 ver0.51</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src = "https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src = "db.js"></script> 
@@ -28,23 +28,23 @@
 <body>
 	<div id = "chart">
 		<div class = "category">
-			<div class = "header"> SS등급 </div>
+			<div class = "header"></div>
 			<div class = "content"></div>
 		</div>
 		<div class = "category">
-			<div class = "header"> S등급 </div>
+			<div class = "header"></div>
 			<div class = "content"></div>
 		</div>
 		<div class = "category">
-			<div class = "header"> A등급 </div>
+			<div class = "header"></div>
 			<div class = "content"></div>
 		</div>
 		<div class = "category">
-			<div class = "header"> B등급 </div>
+			<div class = "header"></div>
 			<div class = "content"></div>
 		</div>
 		<div class = "category">
-			<div class = "header"> C등급 </div>
+			<div class = "header"></div>
 			<div class = "content"></div>
 		</div>
 	</div>
@@ -103,7 +103,44 @@
 		}
 	</script>
 
+	<script>
+		const banner = ['banner1.png'] //2400*1350
+		const text = ['SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크'];
+		var banner_text = [];
+		var banner_picture = [];
+		var elem_header = document.getElementsByClassName('header');
+		var h1_temp = document.createElement('h1');
+		h1_temp.innerHTML = 'SS랭크'
 
+
+		for(var i = 0; i < 5; i++){
+			banner_picture[i] = createImage(banner, "ss_banner");
+			banner_text[i] = createDiv(text[i], 'ss_text');
+
+			elem_header[i].style.overflow = 'hidden';
+			elem_header[i].style.maxWidth = '860px'
+			elem_header[i].style.height = '120px';
+			elem_header[i].style.backgroundImage = "url(banner1.png)";
+			elem_header[i].style.backgroundSize = "860px";
+			elem_header[i].style.backgroundPosition = "0% 17%";
+			elem_header[i].style.marginBottom = '15px';
+
+			banner_picture[i].style.width = '848px';
+			banner_picture[i].style.maxWidth = 'initial';
+			banner_picture[i].style.marginTop = '-7%';
+			banner_picture[i].style.position = 'relative';
+
+			banner_text[i].style.marginTop = '34px';
+			banner_text[i].style.marginLeft = '20px';
+			banner_text[i].style.fontSize = '43px';
+
+			elem_header[i].appendChild(banner_text[i]);
+		}
+
+
+
+
+	</script>
 
 	<script>
 		//모바일
