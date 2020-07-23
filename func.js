@@ -1,12 +1,8 @@
 		var content = document.getElementsByClassName("content");
 		var category = document.getElementsByClassName("category");
 		var btn = document.getElementsByClassName("btn");
+		var elem_header = document.getElementsByClassName('header');
 		var wrapper = [];
-
-		var opt_image = [machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic, power, onset,support, heal, defense, opt_pic, "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", 
-		"https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", 
-		opt_pic, opt_pic, opt_pic, opt_pic, opt_pic];
-
 
 		function create(i, j){
 			wrapper[j] = createDiv('', 'wrapper');
@@ -39,7 +35,27 @@
 			wrapper[j].appendChild(text);
 		}
 
+		function createBanner(){
+			const banner = ['url(banner1.jpg)', 'url(banner2.jpg)', 'url(banner3.jpg)', 'url(banner4.jpg)', 'url(banner5.jpg)'];
+			const text = ['SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크'];
+			var banner_opacity = [];
+			var banner_text = [];
+
+			for(var i = 0; i < 5; i++){
+				banner_text[i] = createDiv(text[i], 'banner_text');
+				banner_opacity[i] = createDiv('', 'banner_opacity');
+
+				elem_header[i].style.backgroundImage = banner[i];
+
+				elem_header[i].appendChild(banner_text[i]);
+				elem_header[i].appendChild(banner_opacity[i]);
+			}
+		}
+
 		function createButton(i){
+			var opt_image = [machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic, power, onset,support, heal, defense, opt_pic, "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", 
+		"https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", 
+		opt_pic, opt_pic, opt_pic, opt_pic, opt_pic];
 			var btn_image = [];
 
 			btn[i].addEventListener("click", btn_listener);

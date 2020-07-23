@@ -22,7 +22,7 @@
 	const guide_dir = 'https://girlcafegun.boom-app.wiki/entry/';
 
 	const on = 0;
-	const off = 0.8;
+	const off = 0.6;
 
 	const star4 = 'rgb(255, 212, 0)';
 	const star3 = 'rgb(255, 0, 255)';
@@ -32,7 +32,7 @@
 
 	const header_title = ['', 'SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크'];
 
-	const opt_pic = 'https://static.thenounproject.com/png/773549-200.png'
+	const opt_pic = 'https://static.thenounproject.com/png/773549-200.png';
 
 
 
