@@ -1,6 +1,14 @@
+<!DOCTYPE html>
 <html lang="ko">
 
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta charset="utf-8">
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172922047-1"></script>
 <script>
@@ -17,9 +25,10 @@
     // 접속한 디바이스 환경
     var this_device = navigator.platform;
 </script>
-<meta charset="utf-8">
 <title>걸카페건 등급표 ver0.52</title>
+<link rel ="dns-prefetch" href = "https://girlcafegun.boom-app.wiki/">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel = "stylesheet" href="iframe-lightbox.css">
 <script src = "https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src = "db.js"></script> 
 <script src = "func.js"></script>
@@ -29,23 +38,23 @@
 	<div id = "chart">
 		<div class = "category">
 			<div class = "header"></div>
-			<div class = "content"></div>
+			<div class = "contents"></div>
 		</div>
 		<div class = "category">
 			<div class = "header"></div>
-			<div class = "content"></div>
+			<div class = "contents"></div>
 		</div>
 		<div class = "category">
 			<div class = "header"></div>
-			<div class = "content"></div>
+			<div class = "contents"></div>
 		</div>
 		<div class = "category">
 			<div class = "header"></div>
-			<div class = "content"></div>
+			<div class = "contents"></div>
 		</div>
 		<div class = "category">
 			<div class = "header"></div>
-			<div class = "content"></div>
+			<div class = "contents"></div>
 		</div>
 	</div>
 
@@ -87,7 +96,6 @@
 		</div>
 	</div>
 
-
 	<script>
 		//초기화
 		for(var i = 0; i < 5; i++){
@@ -128,6 +136,33 @@
    		}
 	</script>
 
+	<script src = "iframe-lightbox.js"></script>
+	<script>
+		(function(root, document) {
+			"use strict";
+			[].forEach.call(document.getElementsByClassName("lightbox-link"), function(el) {
+				el.lightbox = new IframeLightbox(el, {
+					onCreated: function() {
+						/* show your preloader */
+					},
+					onLoaded: function() {
+						/* hide your preloader */
+					},
+					onError: function() {
+						/* hide your preloader */
+					},
+					onClosed: function() {
+						/* hide your preloader */
+					},
+					scrolling: false,
+					/* default: false */
+					rate: 500 /* default: 500 */,
+					touch: false /* default: false - use with care for responsive images in links on vertical mobile screens */
+				});
+			});
+		})("undefined" !== typeof window ? window : this, document);
+
+	</script>
 
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 	  <defs>

@@ -1,4 +1,4 @@
-		var content = document.getElementsByClassName("content");
+		var contents = document.getElementsByClassName("contents");
 		var category = document.getElementsByClassName("category");
 		var btn = document.getElementsByClassName("btn");
 		var elem_header = document.getElementsByClassName('header');
@@ -23,7 +23,7 @@
 			var tactic = createImage(character[j].tactic, 'tactic');
 			var text = createDiv(character[j].class + "<br>" + character[j].name, 'text');
 			
-			content[i].appendChild(wrapper[j]);
+			contents[i].appendChild(wrapper[j]);
 			wrapper[j].appendChild(link);
 				link.appendChild(border);
 					border.appendChild(image);
@@ -99,6 +99,10 @@
 		function createLink(address){
 			var temp = document.createElement('a');
 			temp.href = address;
+			temp.className = 'lightbox-link';
+			temp.setAttribute('data-scrolling', 'true');
+			// temp.setAttribute('data-padding-bottom', '700px');
+
 			return temp;
 		}
 
@@ -328,11 +332,11 @@
 				if(character[i].quick == 0 && character[i].quick_s == 0)
 					character[i].selected = 0;
 				else if((character[i].quick < character[i].quick_s) && character[i].quick != 0){
-					content[character[i].quick - 1].appendChild(wrapper[i]);
+					contents[character[i].quick - 1].appendChild(wrapper[i]);
 					character[i].selected = 1;
 				}
 				else if((character[i].quick >= character[i].quick_s) && character[i].quick_s != 0){
-					content[character[i].quick_s - 1].appendChild(wrapper[i]);
+					contents[character[i].quick_s - 1].appendChild(wrapper[i]);
 					character[i].selected = 1;
 				}
 			}	
@@ -342,16 +346,16 @@
 			for(let i = 0; i < 5; i++){
 				for(let j in character){
 					if(character[j].dmg == i+1){
-						content[i].appendChild(wrapper[j]);
+						contents[i].appendChild(wrapper[j]);
 					}
 					else if(character[j].dmg == null){
-						content[4].appendChild(wrapper[j]);
+						contents[4].appendChild(wrapper[j]);
 					}
 				}
 			}			
 			for(var i in character){
 				if(character[i].dmg != 0){
-					content[character[i].dmg - 1].appendChild(wrapper[i]);
+					contents[character[i].dmg - 1].appendChild(wrapper[i]);
 					character[i].selected = 1;
 				}
 				else
@@ -362,7 +366,7 @@
 		function list_by_survival(){			
 			for(var i in character){
 				if(character[i].survival != 0){
-					content[character[i].survival - 1].appendChild(wrapper[i]);
+					contents[character[i].survival - 1].appendChild(wrapper[i]);
 					character[i].selected = 1;
 				}
 				else
@@ -374,7 +378,7 @@
 			for(var j = 0; j < 5; j++){
 				for(var i in character){
 					if(character[i].rank == j+1){
-						content[j].appendChild(wrapper[i]);
+						contents[j].appendChild(wrapper[i]);
 						character[i].selected = 1;
 					}
 				}

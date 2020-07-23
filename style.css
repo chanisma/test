@@ -36,7 +36,7 @@
 		background-color: rgba(255, 255, 255, 0.3);
 		z-index: 1;
 	}
-	.content{
+	.contents{
 		width: 845px;
 		float: left;
 		padding: 5px;
@@ -69,14 +69,14 @@
 	.text{
 		width: 90px; 
 		font-family: 'paybooc-Bold';
-		font-size: 18;
+		font-size: 18px;
 		text-align: center;
 	}
 
 	.text div{
 		display: table-cell; 
 		vertical-align: bottom; 
-		text-align :right; 
+		text-align: right; 
 	}
 
 	.info{
@@ -144,7 +144,7 @@
 	.btn {
 		z-index: 1;
 		position: relative;
-		padding: 8 20 11 17;
+		padding: 8px 20px 11px 17px;
 		margin-bottom: 11px;
 		margin-right: -2px;
 		text-align: left;

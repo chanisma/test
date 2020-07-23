@@ -19,7 +19,7 @@
 	const heal = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/005.jpg';			// 14
 	const defense = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/type/003.jpg';		// 15
 
-	const guide_dir = 'https://girlcafegun.boom-app.wiki/entry/';
+	const guide_dir = 'https://papago.naver.net/website?locale=ko&source=ja&target=ko&url=https%3A%2F%2Fgirlcafegun.boom-app.wiki%2Fentry%2F';
 
 	const on = 0;
 	const off = 0.6;
