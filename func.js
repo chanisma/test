@@ -2,29 +2,37 @@
 		var category = document.getElementsByClassName("category");
 		var btn = document.getElementsByClassName("btn");
 		var elem_header = document.getElementsByClassName('header');
-		var wrapper = [];
 
-		function create(i, j){
-			wrapper[j] = createDiv('', 'wrapper');
-			var link = createLink(character[j].guide);
+		var wrapper = [];
+		var wrapper_text = [];
+		var txt_class = '';
+		var txt_name = '';
+		var cur_index;
+		var old_index = [];
+		var textbox_class;
+		var textbox_name;
+
+		function create(i){
+			wrapper[i] = createDiv('', 'wrapper');
+			var link = createLink(character[i].guide);
 			var border = createDiv('', 'border');
-			if(character[j].rarity == 4)
+			if(character[i].rarity == 4)
 				border.style.border = "5pt solid " + star4;
-			else if(character[j].rarity == 3)
+			else if(character[i].rarity == 3)
 				border.style.border = "5pt solid " + star3;
-			else if(character[j].rarity == 1)
+			else if(character[i].rarity == 1)
 				border.style.border = "5pt solid " + star1;
-			var image = createImage(character[j].picture, 'ch_img');
+			var image = createImage(character[i].picture, 'ch_img');
 			var box_opacity = createDiv('', 'box_opacity');
-			box_opacity.style.opacity = character[j].appear;
+			box_opacity.style.opacity = character[i].appear;
 			var info = createDiv('', 'info');
-			var attr = createImage(character[j].attr, 'attr');
-			var weapon = createImage(character[j].weapon, 'weapon');
-			var tactic = createImage(character[j].tactic, 'tactic');
-			var text = createDiv(character[j].class + "<br>" + character[j].name, 'text');
+			var attr = createImage(character[i].attr, 'attr');
+			var weapon = createImage(character[i].weapon, 'weapon');
+			var tactic = createImage(character[i].tactic, 'tactic');
+			wrapper_text[i] = createDiv(character[i].class + "<br>" + character[i].name, 'text');
 			
-			contents[i].appendChild(wrapper[j]);
-			wrapper[j].appendChild(link);
+			contents[character[i].rank - 1].appendChild(wrapper[i]);
+			wrapper[i].appendChild(link);
 				link.appendChild(border);
 					border.appendChild(image);
 					border.appendChild(box_opacity);
@@ -32,17 +40,17 @@
 						info.appendChild(attr);
 						info.appendChild(weapon);
 						info.appendChild(tactic);
-			wrapper[j].appendChild(text);
+			wrapper[i].appendChild(wrapper_text[i]);
 		}
 
 		function createBanner(){
 			const banner = ['url(banner1.jpg)', 'url(banner2.jpg)', 'url(banner3.jpg)', 'url(banner4.jpg)', 'url(banner5.jpg)'];
-			const text = ['SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크'];
+			const text_temp = ['SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크'];
 			var banner_opacity = [];
 			var banner_text = [];
 
 			for(var i = 0; i < 5; i++){
-				banner_text[i] = createDiv(text[i], 'banner_text');
+				banner_text[i] = createDiv(text_temp[i], 'banner_text');
 				banner_opacity[i] = createDiv('', 'banner_opacity');
 
 				elem_header[i].style.backgroundImage = banner[i];
@@ -143,7 +151,12 @@
 					btn_attr = 5; 
 					btn_weapon = 5;
 					btn_tactic = 5; 
-					btn_use = 3;  
+					btn_use = 3;
+					textbox_class.value = '';
+					textbox_name.value = '';
+					txt_name = '';
+					txt_class = '';
+					eventSearch();
 					if(old_use != 'basic')
 						list_by_basic();
 					break;			 
@@ -383,4 +396,66 @@
 					}
 				}
 			}
-		}		
+		}
+
+
+		function createSearch(){
+			var par_elem = document.getElementById('search');
+
+			textbox_class = document.createElement("INPUT");
+			textbox_name = document.createElement("INPUT");
+
+			textbox_class.setAttribute("type", "text");
+			textbox_name.setAttribute("type", "text");
+			textbox_class.className = 'textbox';
+			textbox_name.className = 'textbox';
+
+
+			textbox_class.placeholder = '종류(예: 전술장비)';
+			textbox_name.placeholder = '이름(예: 유키)';
+
+			textbox_class.addEventListener('input', (event) => {
+				txt_class = textbox_class.value;
+				eventSearch();
+			});
+
+			textbox_name.addEventListener('input', (event) => {
+				txt_name = textbox_name.value;
+				eventSearch();
+			});
+
+			par_elem.appendChild(textbox_class);
+			par_elem.appendChild(textbox_name);
+		}
+
+		function eventSearch(){
+
+			old_index = cur_index;
+
+			cur_index = 
+				txt_class != '' && txt_name != '' ? character.map((elm, idx) => elm.class == txt_class && elm.name == txt_name ? idx : '').filter(String) : 
+				txt_class == '' ? character.map((elm, idx) => elm.name == txt_name ? idx : '').filter(String) :
+				txt_name == '' ? character.map((elm, idx) => elm.class == txt_class ? idx : '').filter(String) : '';
+
+			// console.log('old: ' + old_index);
+			// console.log('cur: ' + cur_index);
+
+			if(cur_index.length == 0){
+				for(let i in old_index){
+					wrapper[old_index[i]].style.removeProperty('border');
+					wrapper[old_index[i]].style.removeProperty('margin-right');
+					wrapper[old_index[i]].style.removeProperty('margin-bottom');
+					wrapper[old_index[i]].style.removeProperty('margin-top');
+					wrapper[old_index[i]].style.removeProperty('margin-left');
+				}
+			}
+			else{
+				for(let i in cur_index){
+					wrapper[cur_index[i]].style.border = '5px dashed red';
+					wrapper[cur_index[i]].style.marginRight = '6px';
+					wrapper[cur_index[i]].style.marginBottom = '10px';
+					wrapper[cur_index[i]].style.marginLeft = '-5px';
+					wrapper[cur_index[i]].style.marginTop = '-5px';
+				}
+			}
+		}

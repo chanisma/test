@@ -45,9 +45,9 @@
 
 	.wrapper{
 		float: left;
-		width : 100px; height : 145px;
-		margin-right: 5px;
-		margin-bottom: 3px;
+		width : 93px; height : 138px;
+		margin-right: 11px;
+		margin-bottom: 15px;
 	}
 
 	.border{
@@ -132,6 +132,13 @@
 		width: 28px;
 	}
 
+	.textbox{
+		height: 50px;
+		border: 4px solid #4CAF50;
+	    font-family: 'paybooc-Bold';
+	    font-size: 20px;
+	    margin-bottom: 3px;
+	}
 	.btn_picture{
 		height: 28px;
 		border-radius: 50%;

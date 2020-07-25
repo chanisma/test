@@ -2,11 +2,6 @@
 <html lang="ko">
 
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="viewport" content="width=device-width" />
-<meta name="HandheldFriendly" content="True" />
-<meta name="MobileOptimized" content="320" />
 <meta charset="utf-8">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -25,7 +20,12 @@
     // 접속한 디바이스 환경
     var this_device = navigator.platform;
 </script>
-<title>걸카페건 등급표 ver0.52</title>
+
+<!-- <script>
+	document.cookie = "SameSite = Lax";
+</script> -->
+
+<title>걸카페건 등급표 0.52</title>
 <link rel ="dns-prefetch" href = "https://girlcafegun.boom-app.wiki/">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel = "stylesheet" href="iframe-lightbox.css">
@@ -94,23 +94,23 @@
 			<button id = "damage" class = "btn">대미지전투구역</button>
 			<button id = "basic" class = "btn">일반</button>
 		</div>
+		<div class = "optcat" id = "search">
+		</div>
 	</div>
 
 	<script>
 		//초기화
-		for(var i = 0; i < 5; i++){
-			for(var j in character){
-				if(character[j].rank == i+1){
-					create(i, j);
-				}
-			}
+		createBanner();
+		
+		for(let i in character){
+			create(i);		
 		}
 
-		for(i = 0; i < btn.length; i++){
+		for(let i = 0; i < btn.length; i++){
 			createButton(i);
 		}
 
-		createBanner();
+		createSearch();
 	</script>
 
 	<script>
@@ -120,16 +120,19 @@
  	        	console.log('Mobile');
 
 	            var temp = document.getElementsByClassName("optcat");
-	            for(i = 0; i < temp.length; i++){
-					temp[i].style.display = "inline-block";
+	            for(let i = 0; i < temp.length; i++){
 					temp[i].style.marginRight = '-25px';
+					temp[i].style.float = 'left';
 				}
 
 				var temp = document.getElementById("sidebar");
 				temp.style.width = '920px';
 
 				var temp = document.getElementById("tactic");
-				temp.style.marginLeft = '67px'
+				temp.style.marginLeft = '67px';
+
+				document.getElementById('search').style.marginLeft= '67px';
+
 	        } else {
 	            //console.log('PC');
 	        }
@@ -165,7 +168,7 @@
 	</script>
 
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-	  <defs>
+		  <defs>
 	    <filter id="goo">
 	      <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
 	      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
