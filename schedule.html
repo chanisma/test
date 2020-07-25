@@ -27,6 +27,9 @@
 
 <style>
 	@font-face { font-family: 'paybooc-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+	#schedule{
+		width: 950px;
+	}
 
 	.weeks{
 		/*border: 1px solid black;*/
@@ -288,7 +291,6 @@
 				var temp = "url(\"ev"+schedules[i].epic+".jpg\")";
 			else
 				var temp = "url(\"bd"+schedules[i].epic+".jpg\")";
-			console.log(temp);
 			return temp;
 		}
 
