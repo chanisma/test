@@ -4,6 +4,7 @@
 		var elem_header = document.getElementsByClassName('header');
 
 		var wrapper = [];
+		var border = [];
 		var wrapper_text = [];
 		var txt_class = '';
 		var txt_name = '';
@@ -12,36 +13,83 @@
 		var textbox_class;
 		var textbox_name;
 
+		var cookie = [];
+		for(let i in character){
+			cookie.push(0);
+			//초기화
+		}
+		console.log(cookie);
+		console.log('init cookie 모두 0');
+
+
 		function create(i){
-			wrapper[i] = createDiv('', 'wrapper');
+			wrapper[i] = createDiv('', 'wrapper');				
+				border[i] = createDiv('', 'border');
+				if(character[i].rarity == 4)
+					border[i].style.border = "5pt solid " + star4;
+				else if(character[i].rarity == 3)
+					border[i].style.border = "5pt solid " + star3;
+				else if(character[i].rarity == 1)
+					border[i].style.border = "5pt solid " + star1;
+					var image = createImage(character[i].picture, 'ch_img');
+					var box_opacity = createDivId('', 'box_opacity', 'ch'+ String(i));
+						box_opacity.style.opacity = character[i].appear;
+						box_opacity.addEventListener("click", chbtn_listener);
+					var info = createDiv('', 'info');
+						var attr = createImage(character[i].attr, 'attr');
+						var weapon = createImage(character[i].weapon, 'weapon');
+						var tactic = createImage(character[i].tactic, 'tactic');
 			var link = createLink(character[i].guide);
-			var border = createDiv('', 'border');
-			if(character[i].rarity == 4)
-				border.style.border = "5pt solid " + star4;
-			else if(character[i].rarity == 3)
-				border.style.border = "5pt solid " + star3;
-			else if(character[i].rarity == 1)
-				border.style.border = "5pt solid " + star1;
-			var image = createImage(character[i].picture, 'ch_img');
-			var box_opacity = createDiv('', 'box_opacity');
-			box_opacity.style.opacity = character[i].appear;
-			var info = createDiv('', 'info');
-			var attr = createImage(character[i].attr, 'attr');
-			var weapon = createImage(character[i].weapon, 'weapon');
-			var tactic = createImage(character[i].tactic, 'tactic');
-			wrapper_text[i] = createDiv(character[i].class + "<br>" + character[i].name, 'text');
+				wrapper_text[i] = createDiv(character[i].class + "<br>" + character[i].name, 'text');
 			
 			contents[character[i].rank - 1].appendChild(wrapper[i]);
+			wrapper[i].appendChild(border[i]);
+				border[i].appendChild(image);
+				border[i].appendChild(info);
+					info.appendChild(attr);
+					info.appendChild(weapon);
+					info.appendChild(tactic);
+				border[i].appendChild(box_opacity);
 			wrapper[i].appendChild(link);
-				link.appendChild(border);
-					border.appendChild(image);
-					border.appendChild(box_opacity);
-					border.appendChild(info);
-						info.appendChild(attr);
-						info.appendChild(weapon);
-						info.appendChild(tactic);
-			wrapper[i].appendChild(wrapper_text[i]);
+				link.appendChild(wrapper_text[i]);
+
+
+			if(character[i].cookie == 1){
+				wrapper[i].style.border = '5px dashed #4CAF50';
+				wrapper[i].style.marginRight = '6px';
+				wrapper[i].style.marginBottom = '10px';
+				wrapper[i].style.marginLeft = '-5px';
+				wrapper[i].style.marginTop = '-5px';
+			}
 		}
+	// localStorage.setItem('chartCookie', '0'.repeat(100));
+	// console.log(localStorage.getItem('chartCookie'));
+
+		function chbtn_listener(event){
+			let temp = Number(event.target.id.replace('ch', ''));
+			character[temp].cookie = character[temp].cookie == 0 ? 1 : 0; 
+			cookie[temp] = character[temp].cookie;
+
+			console.log(temp + '에 ' + cookie[temp] + '값을 넣음');
+			// localStorage.setItem('chartCookie', cookie);
+
+			if(cookie[temp] == 0){
+				wrapper[temp].style.removeProperty('border');
+				wrapper[temp].style.removeProperty('margin-right');
+				wrapper[temp].style.removeProperty('margin-bottom');
+				wrapper[temp].style.removeProperty('margin-top');
+				wrapper[temp].style.removeProperty('margin-left');
+			}
+			else{
+				wrapper[temp].style.border = '5px dashed #4CAF50';
+				wrapper[temp].style.marginRight = '6px';
+				wrapper[temp].style.marginBottom = '10px';
+				wrapper[temp].style.marginLeft = '-5px';
+				wrapper[temp].style.marginTop = '-5px';
+			}
+		}
+			
+			
 
 		function createBanner(){
 			const banner = ['url(resource/banner1.jpg)', 'url(resource/banner2.jpg)', 'url(resource/banner3.jpg)', 'url(resource/banner4.jpg)', 'url(resource/banner5.jpg)'];
@@ -63,7 +111,7 @@
 		function createButton(i){
 			var opt_image = [machine, life, spirit, quarantine, erode, opt_pic, pistol, assault, shotgun, sniper, heavy, opt_pic, power, onset,support, heal, defense, opt_pic, "https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/f127d8f997c5cf3ebf32e1aba58119a0.jpg", 
 		"https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/e847aa4085e52536646c3e04b90fbd65.jpg", 
-		opt_pic, opt_pic, opt_pic, opt_pic, opt_pic];
+		opt_pic, opt_pic, opt_pic, opt_pic, opt_pic, opt_pic, opt_pic];
 			var btn_image = [];
 
 			btn[i].addEventListener("click", btn_listener);
@@ -87,8 +135,8 @@
 			btn[17].style.color = 'black';
 			btn[18].style.backgroundColor = '#4CAF50';
 			btn[18].style.color = 'black';
-			btn[24].style.backgroundColor = '#4CAF50';
-			btn[24].style.color = 'black';
+			btn[25].style.backgroundColor = '#4CAF50';
+			btn[25].style.color = 'black';
 		}
 
 		function createSpan(cname){
@@ -101,6 +149,14 @@
 			var div = document.createElement('div');
 			div.innerHTML = str;
 			div.className = cname;
+			return div;
+		}
+
+		function createDivId(str, cname, idname){
+			var div = document.createElement('div');
+			div.innerHTML = str;
+			div.className = cname;
+			div.id = idname;
 			return div;
 		}
 
@@ -159,6 +215,8 @@
 					eventSearch();
 					if(old_use != 'basic')
 						list_by_basic();
+					// localStorage.clear();
+					// console.log('localStorage clear');
 					break;			 
 				case 'show_on' : 
 					opt_appear = on;
@@ -257,7 +315,12 @@
 					opt_use = 'basic';
 					btn_use = 3;
 					list_by_basic();
-					break; 
+					break;
+				case 'save':
+					localStorage.setItem('chartCookie', JSON.stringify(cookie));
+					console.log(cookie);
+					console.log('를 저장')
+					break;
 			}
 			btn_view(opt_attr, opt_weapon, opt_tactic, opt_use); 
 			btn_status(btn_attr, btn_weapon, btn_tactic, btn_use); 
@@ -331,12 +394,12 @@
 			}
 
 			if(use != old_use){
-				for(var i = 21; i < 25; i++){
+				for(var i = 22; i < 26; i++){
 					btn[i].style.removeProperty("background-color");
 					btn[i].style.removeProperty("color");
 				}
-				btn[use+21].style.backgroundColor = '#4CAF50';
-				btn[use+21].style.color = 'black';
+				btn[use+22].style.backgroundColor = '#4CAF50';
+				btn[use+22].style.color = 'black';
 			}			
 		}
 
@@ -413,6 +476,8 @@
 
 			textbox_class.placeholder = '종류(예: 전술장비)';
 			textbox_name.placeholder = '이름(예: 유키)';
+			textbox_class.size = 15;
+			textbox_name.size = 15;
 
 			textbox_class.addEventListener('input', (event) => {
 				txt_class = textbox_class.value;

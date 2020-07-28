@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>걸카페건 등급표 0.6</title>
+<title>걸카페건 캐릭터표 0.7</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172922047-1"></script>
@@ -21,10 +21,6 @@
     // 접속한 디바이스 환경
     var this_device = navigator.platform;
 </script>
-
-<!-- <script>
-	document.cookie = "SameSite = Lax";
-</script> -->
 
 <link rel ="dns-prefetch" href = "https://girlcafegun.boom-app.wiki/">
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -87,6 +83,7 @@
 			<button id = "show_all" class = "btn">모든 캐릭터 보기</button>
 			<button id = "show_on" class = "btn">출현 캐릭터만 보기</button>
 			<button id = "reset" class = "btn">리셋</button>
+			<button id = "save"	class = "btn">저장</button>
 		</div>
 		<div class = "optcat">
 			<button id = "quick" class = "btn">구역빠른통과</button>
@@ -96,10 +93,26 @@
 		</div>
 		<div class = "optcat" id = "search">
 		</div>
+		<div class = "optcat">
+			<a href = "./schedule.html"><button class = "btn">걸카페건 일정표</button></a>
+		</div>
+		
 	</div>
 
 	<script>
 		//초기화
+		
+		if(localStorage.getItem('chartCookie') != null){
+			cookie = JSON.parse(localStorage.getItem('chartCookie')||"[]");
+			for(let i in character){
+				character[i].cookie = cookie[i];
+			}
+			console.log(cookie);
+		}
+		else
+			console.log('cookie is null');
+
+
 		createBanner();
 		
 		for(let i = 0; i < character.length-1; i++){
@@ -111,6 +124,7 @@
 		}
 
 		createSearch();
+
 	</script>
 
 	<script>
