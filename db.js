@@ -160,6 +160,8 @@ var character = [
 	
 	add_character('평상복', '시쥬', spirit, assault, support, guide_dir + 'chara-114', off, 1, picture_dir + '114.jpg', 4, 1,			0, 0, 4, 0);
 
+
+	add_character('생일', '그루니에', machine, assault, support, guide_dir + 'chara-139', off, 4, picture_dir + '139.jpg', 0, 1, 			0, 0, 0, 0);
 	// add_character('', '', 0, 0, 0, guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1,				0, 0, 0, 0);
 	// add_character('', '', 0, 0, 0, guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1,				0, 0, 0, 0);
 	// add_character('', '', 0, 0, 0, guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1,				0, 0, 0, 0);
