@@ -1,4 +1,4 @@
-	var weapon_guide_addr = 'https://girlcafegun.boom-app.wiki/entry/weapondata-';
+	var weapon_guide_addr = 'https://papago.naver.net/website?locale=ko&source=ja&target=ko&url=https%3A%2F%2Fgirlcafegun.boom-app.wiki%2Fentry%2Fweapondata-';
 	var weapon_pic_addr = 'https://image.boom-app.wiki/wiki/5cebb950b1b4b83bc835b7e8/weapon/l/'
 
 	var weapons = [
