@@ -41,7 +41,7 @@
 		addWeapon('파이어 샷건', 3, shotgun, 27, '027');
 		addWeapon('갤럭시 스타', 3, sniper, 28, '028');
 		addWeapon('헬즈팽', 3, sniper, 29, '029');
-		addWeapon('버닝 스톤', 3, sniper, 30, '030');
+		addWeapon('버닝 스론', 3, sniper, 30, '030');
 		addWeapon('데스바인', 3, sniper, 31, '031');
 		addWeapon('나이트오더', 3, sniper, 32, '032'); //이벤트
 		addWeapon('하데스 스나이퍼', 3, sniper, 33, '033');
@@ -97,8 +97,8 @@
 		addWeapon('난다나가', 3, shotgun, 81, '081');
 		addWeapon('인력 트리거', 4, pistol, 82, '082');
 		addWeapon('L. I. 아이스티', 4, heavy, 83, '083');
-		// addWeapon('', 3, , 84, '084');
-		// addWeapon('', 3, , 85, '085');
+		addWeapon('팝 일렉트릭', 4, sniper, 84, '084');
+		addWeapon('표준 어쿠스틱', 4, assault, 85, '085');
 		// addWeapon('', 3, , 86, '086');
 		// addWeapon('', 3, , 87, '087');
 		// addWeapon('', 3, , 88, '088');

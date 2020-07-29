@@ -93,11 +93,11 @@
 
 		function createBanner(){
 			const banner = ['url(resource/banner1.jpg)', 'url(resource/banner2.jpg)', 'url(resource/banner3.jpg)', 'url(resource/banner4.jpg)', 'url(resource/banner5.jpg)'];
-			const text_temp = ['SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크'];
+			const text_temp = ['SS랭크', 'S랭크', 'A랭크', 'B랭크', 'C랭크', '신규'];
 			var banner_opacity = [];
 			var banner_text = [];
 
-			for(var i = 0; i < 5; i++){
+			for(var i = 0; i < 6; i++){
 				banner_text[i] = createDiv(text_temp[i], 'banner_text');
 				banner_opacity[i] = createDiv('', 'banner_opacity');
 

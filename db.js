@@ -161,10 +161,13 @@ var character = [
 	add_character('평상복', '시쥬', spirit, assault, support, guide_dir + 'chara-114', off, 1, picture_dir + '114.jpg', 4, 1, 0,			0, 0, 4, 0);
 
 
-	add_character('생일', '그루니에', machine, assault, support, guide_dir + 'chara-139', off, 4, picture_dir + '139.jpg', 0, 1, 0,		0, 0, 0, 0);
-	// add_character('', '', 0, 0, 0, guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
-	// add_character('', '', 0, 0, 0, guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
-	// add_character('', '', 0, 0, 0, guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
-
+	add_character('생일', '그루니에', machine, assault, support, guide_dir + 'chara-139', off, 4, picture_dir + '139.jpg', 6, 1, 0,		0, 0, 0, 0);
+	add_character('군청날개', '로코코', machine, shotgun, defense, guide_dir + 'chara-143', off, 3, picture_dir + '143.jpg', 6, 1, 0,		0, 0, 0, 0);
+	add_character('군청날개', '지무카', machine, heavy, support, guide_dir + 'chara-142', off, 3, picture_dir + '142.jpg', 6, 1, 0,		0, 0, 0, 0);
+	add_character('군청날개', '문', machine, pistol, support, guide_dir + 'chara-141', off, 4, picture_dir + '141.jpg', 6, 1, 0,			0, 0, 0, 0);
+	add_character('군청날개', '지무유', machine, assault, power, guide_dir + 'chara-140', off, 4, picture_dir + '140.jpg', 6, 1, 0,		0, 0, 0, 0);
+	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
+	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
+	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
 
 

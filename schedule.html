@@ -48,8 +48,10 @@
 		info.innerHTML = '보라색 테두리: 이벤트<br>빨강색 테두리: 캐릭터 뽑기<br>파랑색 테두리: 무기 뽑기<br>초록색 테두리: 업데이트'
 
 
+		//마지막 주차
+		const last_week = 45;
 
-		for(let i = 0; i < 43; i++){
+		for(let i = 0; i < last_week; i++){
 			createTable(i);
 		}
 
@@ -64,7 +66,7 @@
 			createContent(i);
 		}
 
-		for(let i = 0; i < 44; i++){
+		for(let i = 0; i < last_week + 1; i++){
 			let temp = Number(sides[i].style.height.replace('px', ''));
 
 			if(temp >= 1500){
@@ -122,7 +124,7 @@
 		}
 
 		function getEPic(i){
-			if(i < 45)
+			if(schedules[i].week <= last_week)
 				var temp = "url(\"resource/ev"+schedules[i].epic+".jpg\")";
 			else
 				var temp = "url(\"resource/bd"+schedules[i].epic+".jpg\")";
@@ -154,11 +156,6 @@
 			for(let j = 0; j < schedules[i].eweapon.length; j++){
 				evdet.appendChild(createEWeapon(schedules[i].eweapon[j])); //weapon의 index를 parsing
 			}
-
-			if(schedules[i].cat == 'event'){
-				event.style.border = '5px solid yellow';
-			}
-
 
 			switch(schedules[i].cat){
 				case 'event':
