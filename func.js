@@ -40,7 +40,7 @@
 						var weapon = createImage(character[i].weapon, 'weapon');
 						var tactic = createImage(character[i].tactic, 'tactic');
 			var link = createLink(character[i].guide);
-				wrapper_text[i] = createDiv(character[i].class + "<br>" + character[i].name, 'text');
+				wrapper_text[i] = createDivId(character[i].class + "<br>" + character[i].name, 'text', character[i].class + character[i].name);
 			
 			contents[character[i].rank - 1].appendChild(wrapper[i]);
 			wrapper[i].appendChild(border[i]);
@@ -507,20 +507,24 @@
 
 			if(cur_index.length == 0){
 				for(let i in old_index){
-					wrapper[old_index[i]].style.removeProperty('border');
-					wrapper[old_index[i]].style.removeProperty('margin-right');
-					wrapper[old_index[i]].style.removeProperty('margin-bottom');
-					wrapper[old_index[i]].style.removeProperty('margin-top');
-					wrapper[old_index[i]].style.removeProperty('margin-left');
+					// wrapper[old_index[i]].style.removeProperty('border');
+					// wrapper[old_index[i]].style.removeProperty('margin-right');
+					// wrapper[old_index[i]].style.removeProperty('margin-bottom');
+					// wrapper[old_index[i]].style.removeProperty('margin-top');
+					// wrapper[old_index[i]].style.removeProperty('margin-left');
+					wrapper_text[old_index[i]].style.removeProperty('color');
+					wrapper_text[old_index[i]].style.removeProperty('background-color');
 				}
 			}
 			else{
 				for(let i in cur_index){
-					wrapper[cur_index[i]].style.border = '5px dashed red';
-					wrapper[cur_index[i]].style.marginRight = '6px';
-					wrapper[cur_index[i]].style.marginBottom = '10px';
-					wrapper[cur_index[i]].style.marginLeft = '-5px';
-					wrapper[cur_index[i]].style.marginTop = '-5px';
+					// wrapper[cur_index[i]].style.border = '5px dashed red';
+					// wrapper[cur_index[i]].style.marginRight = '6px';
+					// wrapper[cur_index[i]].style.marginBottom = '10px';
+					// wrapper[cur_index[i]].style.marginLeft = '-5px';
+					// wrapper[cur_index[i]].style.marginTop = '-5px';
+					wrapper_text[cur_index[i]].style.color = 'red';
+					wrapper_text[cur_index[i]].style.backgroundColor = 'yellow';
 				}
 			}
 		}
