@@ -22,6 +22,8 @@
 		console.log('init cookie 모두 0');
 
 
+		//나중에 4성, 3성 순으로 정리 하고 싶으면 contents[character[i].rank -1].appendChild(wrapper[i]);를 활용하여 배치하는 함수를 만들면 됨.
+
 		function create(i){
 			wrapper[i] = createDiv('', 'wrapper');				
 				border[i] = createDiv('', 'border');
