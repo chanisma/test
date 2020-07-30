@@ -166,7 +166,7 @@ var character = [
 	add_character('군청날개', '지무카', machine, heavy, support, guide_dir + 'chara-142', off, 3, picture_dir + '142.jpg', 6, 1, 0,		0, 0, 0, 0);
 	add_character('군청날개', '문', machine, pistol, support, guide_dir + 'chara-141', off, 4, picture_dir + '141.jpg', 6, 1, 0,			0, 0, 0, 0);
 	add_character('군청날개', '지무유', machine, assault, power, guide_dir + 'chara-140', off, 4, picture_dir + '140.jpg', 6, 1, 0,		0, 0, 0, 0);
-	add_character('생일', '리타', spirit, heavy, power, 'resource/temp1.png', on, 4, 'resource/temp.jpg', 6, 1, 0,		0, 0, 0, 0);
+	add_character('생일', '리타', spirit, heavy, power, guide_dir + 'chara-144', on, 4, picture_dir + '144.jpg', 6, 1, 0,		0, 0, 0, 0);
 	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
 	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
 	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
