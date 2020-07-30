@@ -135,24 +135,26 @@
 		//모바일
 		if ( this_device ) {
  	        if ( pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ) {
- 	        	console.log('Mobile');
+ 	        	// console.log('Mobile');
+
+				document.getElementById("sidebar").style.width = '920px';
 
 	            var temp = document.getElementsByClassName("optcat");
 	            for(let i = 0; i < temp.length; i++){
-					temp[i].style.marginRight = '-25px';
 					temp[i].style.float = 'left';
+					temp[i].style.width = '900px';
+					temp[i].style.marginBottom = '0px';
+					temp[i].style.marginTop = '10px';
 				}
 
-				var temp = document.getElementById("sidebar");
-				temp.style.width = '920px';
-
-				var temp = document.getElementById("tactic");
-				temp.style.marginLeft = '67px';
-
-				document.getElementById('search').style.marginLeft= '67px';
+				var erase_classname = document.getElementsByClassName('lightbox-link');
+				for (let i in erase_classname){
+					erase_classname[i].removeAttribute("class");
+				}
 
 	        } else {
-	            //console.log('PC');
+	            // console.log('PC');
+	            document.body.style.width = '1170px';
 	        }
    		}
 	</script>

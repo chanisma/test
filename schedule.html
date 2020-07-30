@@ -296,8 +296,13 @@
 
 				document.getElementById('search').style.marginLeft= '67px';
 
+				var erase_classname = document.getElementsByClassName('lightbox-link');
+					for (let i in erase_classname){
+						erase_classname[i].removeAttribute("class");
+					}
+
 	        } else {
-	            //console.log('PC');
+	            console.log('PC');
 	        }
    		}
 	</script>
