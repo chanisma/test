@@ -1,0 +1,273 @@
+	@font-face { font-family: 'paybooc-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+	body{
+		background-color: white;
+	}
+
+	#chart{
+		width: 890px;
+		float: left;
+	}
+
+	.category{
+		width:  860px;
+		clear: both;
+	}
+	.header{
+		width: 830px;
+		height: 120px;
+		font-family: 'paybooc-Bold';
+		border: 1px solid black;
+		margin-bottom: 15px;
+		position: relative;
+		overflow: hidden;
+		background-size: 860px;
+	}
+
+	.banner_text{
+		margin: 34px 0px 0px 20px;
+		font-size: 43px;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 2;
+	}
+
+	.banner_opacity{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.3);
+		z-index: 1;
+	}
+	.contents{
+		width: 845px;
+		float: left;
+		padding: 5px;
+		padding-left: 10px;
+	}
+
+	.wrapper{
+		float: left;
+		width : 93px; height : 138px;
+		margin-right: 11px;
+		margin-bottom: 15px;
+	}
+
+	.border{
+		width: 80px; height: 80px;
+		border: 5px solid;
+	}
+
+	img.ch_img{
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		z-index: 1;
+	}
+
+	.box_opacity{
+		position: absolute; 
+		background-color: black;
+		width : 80px; height : 80px; 
+		z-index : 2;
+	}
+
+	.text{
+		width: 90px; 
+		font-family: 'paybooc-Bold';
+		font-size: 18px;
+		text-align: center;
+		margin-left : 2px;
+	}
+
+	.text div{
+		display: table-cell; 
+		vertical-align: bottom; 
+		text-align: right; 
+	}
+
+	.info{
+		position: relative;
+		width: 100px;
+		left: -15px; top: -15px;
+		z-index: 3;
+	}
+	.attr{
+		float: left; 
+		width: 28px; height: 28px;
+		border-radius: 50%;
+		margin-right: 2px;
+	}
+
+	.weapon{
+		float: left;
+		width: 25px; height: 25px;
+		border-radius: 50%;
+		border: 1px solid black;
+		margin-right: 2px;
+	}
+
+	.tactic{
+		float: left;
+		width: 27px; height: 27px;
+		border-radius: 50%;
+	}
+	
+	a:link, a:visited{
+		text-decoration: none;
+		color: black;
+	}
+
+	#sidebar{
+		float: left;
+		width: 280px;
+	}
+
+	.optcat{
+		margin-bottom : 20px;
+		margin-top: 10px;
+		width: 300px;
+	}
+
+	#weapon .btn{
+		height: 54px;
+	}
+	#weapon img{
+		width: 43px;
+	}
+
+	#weapon_all img{
+		width: 28px;
+	}
+
+	.textbox{
+		height: 50px;
+		border: 4px solid #4CAF50;
+	    font-family: 'paybooc-Bold';
+	    font-size: 20px;
+	    margin-bottom: 3px;
+	}
+	.btn_picture{
+		height: 28px;
+		border-radius: 50%;
+		margin-right: 5px;
+		margin-top: 1px;
+		position: relative;
+		top: 6px;
+	}
+
+	.btn {
+		z-index: 1;
+		position: relative;
+		padding: 8px 20px 11px 17px;
+		margin-bottom: 11px;
+		margin-right: -2px;
+		text-align: left;
+		color: #4CAF50;
+		font-family: 'paybooc-Bold';
+		font-size: 20px;
+		background-color: transparent;
+		outline: none;
+		border: none;
+		-webkit-transition: color 0.5s;
+		transition: color 0.5s;
+		cursor: pointer;
+	}
+	.btn:before {
+	  	content: "";
+	  	z-index: 1;
+	  	position: absolute;
+	  	left: 0;
+	  	top: 0;
+	  	width: 100%;
+	  	height: 100%;
+	  	border: 4px solid #4CAF50;
+	}
+	.btn:after {
+	  	content: "";
+	  	z-index: -2;
+	  	position: absolute;
+	  	left: 9px;
+	  	top: 9px;
+	  	width: 100%;
+	  	height: 100%;
+	  	border: 6px solid transparent;
+	  	-webkit-transition: all 0.3s 0.2s;
+	  	transition: all 0.3s 0.2s;
+	}
+	.btn:hover {
+	  	color: #222;
+	}
+	.btn:hover:after {
+	  	-webkit-transition: all 0.3s;
+	  	transition: all 0.3s;
+	  	left: 0;
+	  	top: 0;
+	}
+	.blob-btn__inner {
+	  	z-index: -1;
+	  	overflow: hidden;
+	  	position: absolute;
+	  	left: 0;
+	  	top: 0;
+	  	width: 100%;
+	  	height: 100%;
+	}
+	.blob-btn__blobs {
+	  	position: relative;
+	  	display: block;
+	  	height: 100%;
+	  	-webkit-filter: url("#goo");
+	          	filter: url("#goo");
+	}
+	.blob-btn__blob {
+	  	position: absolute;
+	  	top: 6px;
+	  	width: 25%;
+	  	height: 100%;
+	  	background: #4CAF50;
+	  	border-radius: 100%;
+	  	-webkit-transform: translate3d(0, 150%, 0) scale(1.7);
+	          	transform: translate3d(0, 150%, 0) scale(1.7);
+	  	-webkit-transition: -webkit-transform 0.45s;
+	  	transition: -webkit-transform 0.45s;
+	  	transition: transform 0.45s;
+	  	transition: transform 0.45s, -webkit-transform 0.45s;
+	}
+	@supports ((-webkit-filter: url("#goo")) or (filter: url("#goo"))) {
+	  	.blob-btn__blob {
+	    	-webkit-transform: translate3d(0, 150%, 0) scale(1.4);
+	            	transform: translate3d(0, 150%, 0) scale(1.4);
+	  }
+	}
+	.blob-btn__blob:nth-child(1) {
+	  	left: 0%;
+	  	-webkit-transition-delay: 0s;
+	          	transition-delay: 0s;
+	}
+	.blob-btn__blob:nth-child(2) {
+	  	left: 30%;
+	  	-webkit-transition-delay: 0.08s;
+	          	transition-delay: 0.08s;
+	}
+	.blob-btn__blob:nth-child(3) {
+	  	left: 60%;
+	  	-webkit-transition-delay: 0.16s;
+	          	transition-delay: 0.16s;
+	}
+	.blob-btn__blob:nth-child(4) {
+	  	left: 90%;
+	  	-webkit-transition-delay: 0.24s;
+	         	transition-delay: 0.24s;
+	}
+	.blob-btn:hover .blob-btn__blob {
+	  	-webkit-transform: translateZ(0) scale(1.7);
+	          	transform: translateZ(0) scale(1.7);
+	}
+	@supports ((-webkit-filter: url("#goo")) or (filter: url("#goo"))) {
+	  .btn:hover .blob-btn__blob {
+	    	-webkit-transform: translateZ(0) scale(1.4);
+	           	transform: translateZ(0) scale(1.4);
+	  	}
+	}

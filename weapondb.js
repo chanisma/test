@@ -8,9 +8,7 @@
 	function addWeapon(name, rarity, cat, guide, picture){
 		weapons.push({name, rarity, cat, guide, picture});
 	}
-	
 
-	
 		//서버 오픈 아이템
 		addWeapon('체이싱 스타', 4, pistol, 1, '001');
 		addWeapon('에어리스', 4, pistol, 2, '002');

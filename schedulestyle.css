@@ -2,6 +2,9 @@
 	#schedule{
 		width: 950px;
 	}
+	body{
+		background-color: white;
+	}
 
 	#info{
 	    width: 200px;

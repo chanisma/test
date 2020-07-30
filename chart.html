@@ -15,19 +15,11 @@
 	gtag('config', 'UA-172922047-1');
 </script>
 
-<script>
-	var pc_device = "win16|win32|win64|mac|macintel";
- 
-    // 접속한 디바이스 환경
-    var this_device = navigator.platform;
-</script>
-
 <link rel ="dns-prefetch" href = "https://girlcafegun.boom-app.wiki/">
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="chart.css">
 <link rel = "stylesheet" href="iframe-lightbox.css">
 <script src = "https://code.jquery.com/jquery-3.1.1.js"></script>
-<script src = "db.js"></script> 
-<script src = "func.js"></script>
+<script src = "characterdb.js"></script> 
 </head>
 
 <body>
@@ -95,68 +87,18 @@
 			<button id = "damage" class = "btn">대미지전투구역</button>
 			<button id = "basic" class = "btn">일반</button>
 		</div>
-		<div class = "optcat" id = "search">
-		</div>
-		<div class = "optcat">
-			<a href = "./schedule.html"><button class = "btn">걸카페건 일정표</button></a>
+		<div class = "optcat" id = "search"></div>
+		<div class = "optcat" id = "links">
+			<a href = "./schedule.html" class = "lightbox-link" data-scrolling = 'true'><button class = "btn">걸카페건 일정표</button></a>
 		</div>
 		
 	</div>
 
-	<script>
-		//초기화
-		
-		if(localStorage.getItem('chartCookie') != null){
-			cookie = JSON.parse(localStorage.getItem('chartCookie')||"[]");
-			for(let i in character){
-				character[i].cookie = cookie[i];
-			}
-			console.log(cookie);
-		}
-		else
-			console.log('cookie is null');
-
-
-		createBanner();
-		
-		for(let i = 0; i < character.length; i++){
-			create(i);		
-		}
-
-		for(let i = 0; i < btn.length; i++){
-			createButton(i);
-		}
-
-		createSearch();
-
-	</script>
+	<script src = "chart.js"></script>
 
 	<script>
-		//모바일
-		if ( this_device ) {
- 	        if ( pc_device.indexOf(navigator.platform.toLowerCase()) < 0 ) {
- 	        	// console.log('Mobile');
-
-				document.getElementById("sidebar").style.width = '920px';
-
-	            var temp = document.getElementsByClassName("optcat");
-	            for(let i = 0; i < temp.length; i++){
-					temp[i].style.float = 'left';
-					temp[i].style.width = '900px';
-					temp[i].style.marginBottom = '0px';
-					temp[i].style.marginTop = '10px';
-				}
-
-				var erase_classname = document.getElementsByClassName('lightbox-link');
-				for (let i in erase_classname){
-					erase_classname[i].removeAttribute("class");
-				}
-
-	        } else {
-	            // console.log('PC');
-	            document.body.style.width = '1170px';
-	        }
-   		}
+		initChart();
+		device_ctrl();
 	</script>
 
 	<script src = "iframe-lightbox.js"></script>
@@ -184,7 +126,6 @@
 				});
 			});
 		})("undefined" !== typeof window ? window : this, document);
-
 	</script>
 
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
