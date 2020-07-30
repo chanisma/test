@@ -166,7 +166,7 @@ var character = [
 	add_character('군청날개', '지무카', machine, heavy, support, guide_dir + 'chara-142', off, 3, picture_dir + '142.jpg', 6, 1, 0,		0, 0, 0, 0);
 	add_character('군청날개', '문', machine, pistol, support, guide_dir + 'chara-141', off, 4, picture_dir + '141.jpg', 6, 1, 0,			0, 0, 0, 0);
 	add_character('군청날개', '지무유', machine, assault, power, guide_dir + 'chara-140', off, 4, picture_dir + '140.jpg', 6, 1, 0,		0, 0, 0, 0);
-	add_character('생일', '리타', spirit, heavy, power, 'https://cafeptthumb-phinf.pstatic.net/MjAyMDA3MjlfMTMx/MDAxNTk2MDA4MjQ5ODk5.AdqX36OqphE3bOSV25AMbOECXJs1hVjDNVHHYTyXJAMg.7rlYedmjCNUidQwUKIcc9YceEiu7GK3aMfbQr1ytO5og.PNG/%EC%83%9D%EC%9D%BC_%EB%A6%AC%ED%83%80.png', on, 4, 'resource/temp.jpg', 6, 1, 0,		0, 0, 0, 0);
+	add_character('생일', '리타', spirit, heavy, power, 'resource/temp1.png', on, 4, 'resource/temp.jpg', 6, 1, 0,		0, 0, 0, 0);
 	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
 	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
 	// add_character('', '', , , , guide_dir + 'chara-', off, 3, picture_dir + '.jpg', 4, 1, 0,				0, 0, 0, 0);
