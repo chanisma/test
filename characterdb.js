@@ -98,7 +98,7 @@ var character = [
 
 	add_character('크리스마스', '소쇼우신', spirit, pistol, power, guide_dir + 'chara-88', off, 4, picture_dir + '088.jpg', 1, 1, 0,		1, 3, 2, 0);
 	add_character('신년', '지무카', quarantine, heavy, onset, guide_dir + 'chara-89', off, 4, picture_dir + '089.jpg', 1, 1, 0,			1, 4, 2, 0);
-	add_character('춘절', '지무유', quarantine, shotgun, onset, guide_dir + 'chara-103', off, 4, picture_dir + '103.jpg', 2, 1, 0,		3, 1, 3, 5);
+	add_character('춘절', '지무유', quarantine, shotgun, onset, guide_dir + 'chara-103', off, 4, picture_dir + '103.jpg', 1, 1, 0,		3, 1, 3, 5);
 	add_character('데이트', '아이린', spirit, shotgun, support, guide_dir + 'chara-135', off, 4, picture_dir + '135.jpg', 2, 1, 0,		2, 0, 2, 5);
 	add_character('서약', '유키', spirit, sniper, onset, guide_dir + 'chara-92', off, 4, picture_dir + '092.jpg', 2, 1, 0,				3, 2, 3, 0);
 	add_character('전술장비', '지무유', life, sniper, support, guide_dir + 'chara-76', off, 4, picture_dir + '076.jpg', 3, 1, 0,			4, 3, 3, 5);
