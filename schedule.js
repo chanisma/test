@@ -1,52 +1,52 @@
 	var schedule = document.getElementById('schedule');
 	var info = document.getElementById('info');
-
-	info.innerHTML = '보라색 테두리: 이벤트<br>빨강색 테두리: 캐릭터 뽑기<br>파랑색 테두리: 무기 뽑기<br>초록색 테두리: 업데이트'
-
-	//마지막 주차
-	const last_week = 45;
-
-	for(let i = 0; i < last_week; i++){
-		createTable(i);
-	}
-
-	createetcTable('기타');
-
 	var contents = document.getElementsByClassName('contents');
 	var events = [];
 	var sides = document.getElementsByClassName('sides');
 	var sidesText = document.getElementsByClassName('sideText');
 
-	for(let i = 0; i < schedules.length; i++){
-		createContent(i);
-	}
+	const last_week = 45;
+	info.innerHTML = '보라색 테두리: 이벤트<br>빨강색 테두리: 캐릭터 뽑기<br>파랑색 테두리: 무기 뽑기<br>초록색 테두리: 업데이트'
 
-	for(let i = 0; i < last_week + 1; i++){
-		let temp = Number(sides[i].style.height.replace('px', ''));
+	//마지막 주차
+	function init_schedule(){
+		for(let i = 0; i < last_week; i++){
+			createTable(i);
+		}
+		createetcTable('기타');
+	
+		for(let i = 0; i < schedules.length; i++){
+			createContent(i);
+		}
 
-		if(temp >= 1500){
-			sidesText[i].style.marginTop = (temp/2-14)+'px';
+		for(let i = 0; i < last_week + 1; i++){
+			let temp = Number(sides[i].style.height.replace('px', ''));
+
+			if(temp >= 1500){
+				sidesText[i].style.marginTop = (temp/2-14)+'px';
+			}
+			else if(temp >= 1200){
+				sides[i].style.backgroundImage = 'url("resource/schedule4.jpg")';
+				sidesText[i].style.marginTop = (temp/2-14)+'px';
+			}
+			else if(temp >= 900){
+				sides[i].style.backgroundImage = 'url("resource/schedule3.jpg")';
+				sidesText[i].style.marginTop = (temp/2-14)+'px';
+			}
+			else if(temp >= 600){
+				sides[i].style.backgroundImage = 'url("resource/schedule2.jpg")';
+				sidesText[i].style.marginTop = (temp/2-14)+'px';
+			}
+			else if(temp >= 300){
+				sides[i].style.backgroundImage = 'url("resource/schedule1.jpg")';
+				sidesText[i].style.marginTop = (temp/2-14)+'px';
+			}
+			else{
+				sidesText[i].style.marginTop = '33px';
+			}
+			
 		}
-		else if(temp >= 1200){
-			sides[i].style.backgroundImage = 'url("resource/schedule4.jpg")';
-			sidesText[i].style.marginTop = (temp/2-14)+'px';
-		}
-		else if(temp >= 900){
-			sides[i].style.backgroundImage = 'url("resource/schedule3.jpg")';
-			sidesText[i].style.marginTop = (temp/2-14)+'px';
-		}
-		else if(temp >= 600){
-			sides[i].style.backgroundImage = 'url("resource/schedule2.jpg")';
-			sidesText[i].style.marginTop = (temp/2-14)+'px';
-		}
-		else if(temp >= 300){
-			sides[i].style.backgroundImage = 'url("resource/schedule1.jpg")';
-			sidesText[i].style.marginTop = (temp/2-14)+'px';
-		}
-		else{
-			sidesText[i].style.marginTop = '33px';
-		}
-		
+
 	}
 
 	function createTable(i){
@@ -88,19 +88,21 @@
 
 	function createContent(i){
 		var event = createDiv('', 'event');
-		var evpic = createDiv('', 'evpic');
-			var evname = createDiv(schedules[i].ename, 'evname');
-			var pic_opac = createDiv('', 'pic_opac');
-		var evdet = createDiv('', 'evdet');
+		var link = createLink(get_guide_addr(i));
+			var evpic = createDiv('', 'evpic');
+				var evname = createDiv(schedules[i].ename, 'evname');
+				var pic_opac = createDiv('', 'pic_opac');
+			var evdet = createDiv('', 'evdet');
 		// var evetc = createDiv('', 'evetc');
 
 		evpic.style.backgroundImage = getEPic(i);
 		evpic.style.backgroundSize = '500px';
 
 		contents[schedules[i].week-1].appendChild(event);
-			event.appendChild(evpic);
-				evpic.appendChild(evname);
-				evpic.appendChild(pic_opac);
+			event.appendChild(link);
+				link.appendChild(evpic);
+					evpic.appendChild(evname);
+					evpic.appendChild(pic_opac);
 			event.appendChild(evdet);
 			// event.appendChild(evetc);
 
