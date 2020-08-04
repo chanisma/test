@@ -41,7 +41,7 @@ var character = [
 		//4성
 		{class: '전술장비', name: '유키', attr: machine, weapon: shotgun, tactic: onset, guide: guide_dir + 'chara-1', appear: on, rarity: 4, picture: picture_dir + '001.jpg', rank: 1, selected : 1, cookie : 0,		quick: 2, quick_s: 4, dmg: 3, survival: 0},
 		{class: '서약', name: '코넬리아', attr: machine, weapon: shotgun, tactic: power, guide: guide_dir + 'chara-74', appear: on, rarity: 4, picture: picture_dir + '074.jpg', rank: 1, selected : 1, cookie : 0,		quick: 2, quick_s: 2, dmg: 2, survival: 0},
-		{class: '전술장비', name: '아이린', attr: machine, weapon: pistol, tactic: power, guide: guide_dir + 'chara-2', appear: on, rarity: 4, picture: picture_dir + '002.jpg', rank: 2, selected : 1, cookie : 0,		quick: 0, quick_s: 2, dmg: 0, survival: 0},
+		{class: '전술장비', name: '아이린', attr: machine, weapon: pistol, tactic: power, guide: guide_dir + 'chara-2', appear: on, rarity: 4, picture: picture_dir + '002.jpg', rank: 3, selected : 1, cookie : 0,		quick: 0, quick_s: 2, dmg: 0, survival: 0},
 		{class: '메이드복', name: '지무카', attr: spirit, weapon: assault, tactic: support, guide: guide_dir + 'chara-3', appear: on, rarity: 4, picture: picture_dir + '003.jpg', rank: 2, selected : 1, cookie : 0,		quick: 4, quick_s: 5, dmg: 3, survival: 3},
 		{class: '메이드복', name: '지무유', attr: spirit, weapon: pistol, tactic: power, guide: guide_dir + 'chara-6', appear: on, rarity: 4, picture: picture_dir + '006.jpg', rank: 4, selected : 1, cookie : 0,		quick: 0, quick_s: 3, dmg: 4, survival: 0},
 		{class: '메이드복', name: '소쇼우신', attr: machine, weapon: shotgun, tactic: support, guide: guide_dir + 'chara-5', appear: on, rarity: 4, picture: picture_dir + '005.jpg', rank: 4, selected : 1, cookie : 0,	quick: 0, quick_s: 0, dmg: 3, survival: 0},
