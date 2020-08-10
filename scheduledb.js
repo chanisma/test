@@ -1,3 +1,5 @@
+		const last_week = 47;
+
 		var schedules = [
 			{week: 1, ename: '해안가감찰', epic: 0, echar: [24], eweapon: [65], cat: 'event', guide: 'scout-coast', etc: ''},
 			{week: 1, ename: '전술장비 작동', epic: 1, echar: [0, 2, 9], eweapon: [], cat: 'gacha', guide: '', etc: ''},
@@ -75,9 +77,9 @@
 
 		for(let i in schedules){
 			if(schedules[i].ename == '춘절 문 업데이트' || schedules[i].ename == '춘절2020' || schedules[i].ename == '춘절 무기뽑기' || schedules[i].ename == '황야여단'){
-				schedules[i].week = 6;
+				schedules[i].week = 5;
 			}
 			else if(schedules[i].week >= 6){
-				schedules[i].week += 3;
+				schedules[i].week += 2;
 			}
 		}
