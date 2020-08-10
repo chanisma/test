@@ -78,10 +78,11 @@
 	}
 
 	function getEPic(i){
-		if(schedules[i].week <= last_week)
-			var temp = "url(\"resource/ev"+schedules[i].epic+".jpg\")";
-		else
+		if(schedules[i].week == 0)
 			var temp = "url(\"resource/bd"+schedules[i].epic+".jpg\")";
+		else
+			var temp = "url(\"resource/ev"+schedules[i].epic+".jpg\")";
+
 		return temp;
 	}
 
@@ -97,13 +98,25 @@
 		evpic.style.backgroundImage = getEPic(i);
 		evpic.style.backgroundSize = '500px';
 
-		contents[schedules[i].week-1].appendChild(event);
-			event.appendChild(link);
-				link.appendChild(evpic);
-					evpic.appendChild(evname);
-					evpic.appendChild(pic_opac);
-			event.appendChild(evdet);
-			// event.appendChild(evetc);
+		if(schedules[i].cat == 'birthday'){
+			contents[last_week].appendChild(event);
+			height_s = sides[last_week].style.height.replace('px', "");
+			height_s = Number(height_s)+307;
+			sides[last_week].style.height = height_s + 'px';
+		}
+		else{
+			contents[schedules[i].week-1].appendChild(event);
+			height_s = sides[schedules[i].week-1].style.height.replace('px', "");
+			height_s = Number(height_s)+307;
+			sides[schedules[i].week-1].style.height = height_s + 'px';
+		}
+				event.appendChild(link);
+					link.appendChild(evpic);
+						evpic.appendChild(evname);
+						evpic.appendChild(pic_opac);
+				event.appendChild(evdet);
+				// event.appendChild(evetc);
+		
 
 		for(let j = 0; j < schedules[i].echar.length; j++){
 			evdet.appendChild(createEChar(schedules[i].echar[j])); //character의 index를 parsing
@@ -125,9 +138,9 @@
 				break;
 		}
 
-		height_s = sides[schedules[i].week-1].style.height.replace('px', "");
-		height_s = Number(height_s)+307;
-		sides[schedules[i].week-1].style.height = height_s + 'px';
+		// height_s = sides[schedules[i].week-1].style.height.replace('px', "");
+		// height_s = Number(height_s)+307;
+		// sides[schedules[i].week-1].style.height = height_s + 'px';
 	}
 
 	function createEChar(i){

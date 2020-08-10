@@ -1,4 +1,4 @@
-		const last_week = 47;
+		const last_week = 50;
 
 		var schedules = [
 			{week: 1, ename: '해안가감찰', epic: 0, echar: [24], eweapon: [65], cat: 'event', guide: 'scout-coast', etc: ''},
@@ -51,16 +51,18 @@
 		add_schedule(45, '울트라 마린의 여름 하늘 뽑기', 46, [104, 105, 103], [], 'gacha', '', '');
 		add_schedule(45, '군청의 날개', 47, [102], [], 'event', 'theultramarinewings', '');
 		add_schedule(45, '마음을 연주하는 손가락 끝', 48, [], [84, 85], 'weapongacha', '', '');
+		add_schedule(48, '스타 걸즈', 49, [], [], 'event', '', '');
+		add_schedule(48, '스윗 팝스타들', 50, [], [], 'gacha', '', '');
 
 
 
-		add_schedule(46, '아이린 생일 빙고 1/18', '0118', [58], [], 'event', '', '');
-		add_schedule(46, '소쇼우신 생일 빙고 2/12', '0212', [54], [], 'event', '', '');
-		add_schedule(46, '주노 생일 빙고 4/1', '0401', [60], [], 'event', '', '');
-		add_schedule(46, '지무카 생일 빙고 5/14', '0514', [69], [], 'event', '', '');
-		add_schedule(46, '로코코 생일 빙고 6/14', '0614', [70], [], 'event', '', '');
-		add_schedule(46, '그루니에 생일 빙고 7/6', '0706', [101], [], 'event', '', '');
-		add_schedule(46, '리타 생일 빙고 7/30', '0730', [106], [], 'event', '', '');
+		add_schedule(0, '아이린 생일 빙고 1/18', '0118', [58], [], 'birthday', '', '');
+		add_schedule(0, '소쇼우신 생일 빙고 2/12', '0212', [54], [], 'birthday', '', '');
+		add_schedule(0, '주노 생일 빙고 4/1', '0401', [60], [], 'birthday', '', '');
+		add_schedule(0, '지무카 생일 빙고 5/14', '0514', [69], [], 'birthday', '', '');
+		add_schedule(0, '로코코 생일 빙고 6/14', '0614', [70], [], 'birthday', '', '');
+		add_schedule(0, '그루니에 생일 빙고 7/6', '0706', [101], [], 'birthday', '', '');
+		add_schedule(0, '리타 생일 빙고 7/30', '0730', [106], [], 'birthday', '', '');
 
 
 
