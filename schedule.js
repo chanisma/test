@@ -5,7 +5,6 @@
 	var sides = document.getElementsByClassName('sides');
 	var sidesText = document.getElementsByClassName('sideText');
 
-	const last_week = 48;
 	info.innerHTML = '보라색 테두리: 이벤트<br>빨강색 테두리: 캐릭터 뽑기<br>파랑색 테두리: 무기 뽑기<br>초록색 테두리: 업데이트'
 
 	//마지막 주차
