@@ -98,15 +98,15 @@ var character = [
 
 	add_character('크리스마스', '소쇼우신', spirit, pistol, power, guide_dir + 'chara-88', off, 4, picture_dir + '088.jpg', 1, 1, 0,		1, 3, 2, 0);
 	add_character('신년', '지무카', quarantine, heavy, onset, guide_dir + 'chara-89', off, 4, picture_dir + '089.jpg', 1, 1, 0,			1, 4, 2, 0);
-	add_character('춘절', '지무유', quarantine, shotgun, onset, guide_dir + 'chara-103', off, 4, picture_dir + '103.jpg', 1, 1, 0,		3, 1, 3, 5);
+	add_character('치파오', '지무유', quarantine, shotgun, onset, guide_dir + 'chara-103', on, 4, picture_dir + '103.jpg', 1, 1, 0,		3, 1, 3, 5);
 	add_character('데이트', '아이린', spirit, shotgun, support, guide_dir + 'chara-135', off, 4, picture_dir + '135.jpg', 2, 1, 0,		2, 0, 2, 5);
 	add_character('서약', '유키', spirit, sniper, onset, guide_dir + 'chara-92', off, 4, picture_dir + '092.jpg', 2, 1, 0,				3, 2, 3, 0);
 	add_character('전술장비', '지무유', life, sniper, support, guide_dir + 'chara-76', off, 4, picture_dir + '076.jpg', 3, 1, 0,			4, 3, 3, 5);
-	add_character('춘절', '문', spirit, assault, support, guide_dir + 'chara-100', off, 4, picture_dir + '100.jpg', 3, 1, 0,				4, 3, 3, 0);
+	add_character('치파오', '문', spirit, assault, support, guide_dir + 'chara-100', on, 4, picture_dir + '100.jpg', 3, 1, 0,				4, 3, 3, 0);
 	add_character('사무관', '아이린', life, assault, power, guide_dir + 'chara-112', off, 4, picture_dir + '112.jpg', 3, 1, 0,			2, 0, 3, 0);
 	add_character('기갑공격', '아니야', machine, sniper, support, guide_dir + 'chara-119', off, 4, picture_dir + '119.jpg', 3, 1, 0,		0, 4, 3, 0);
 	add_character('수영복', '유키', erode, assault, power, guide_dir + 'chara-121', off, 4, picture_dir + '121.jpg', 3, 1, 0,			3, 0, 3, 0);
-	add_character('춘절', '지무카', erode, pistol, defense, guide_dir + 'chara-102', off, 4, picture_dir + '102.jpg', 3, 1, 0,			4, 0, 4, 5);
+	add_character('치파오', '지무카', erode, pistol, defense, guide_dir + 'chara-102', on, 4, picture_dir + '102.jpg', 3, 1, 0,			4, 0, 4, 5);
 	add_character('전술장비', '그루니에', life, pistol, power, guide_dir + 'chara-77', off, 4, picture_dir + '077.jpg', 3, 1, 0,			4, 2, 4, 5);
 	add_character('수영복', '리타', machine, assault, heal, guide_dir + 'chara-96', off, 4, picture_dir + '096.jpg', 3, 1, 0,			0, 5, 4, 3);
 	add_character('VD', '이코스', erode, assault, support, guide_dir + 'chara-105', off, 4, picture_dir + '105.jpg', 3, 1, 0,			3, 0, 3, 0);

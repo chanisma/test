@@ -71,3 +71,13 @@
 				var temp = 'https://papago.naver.net/website?locale=ko&source=ja&target=ko&url=https%3A%2F%2Fgirlcafegun.boom-app.wiki%2Fentry%2F' + schedules[i].guide;
 			return temp;
 		}
+
+
+		for(let i in schedules){
+			if(schedules[i].ename == '춘절 문 업데이트' || schedules[i].ename == '춘절2020' || schedules[i].ename == '춘절 무기뽑기' || schedules[i].ename == '황야여단'){
+				schedules[i].week = 6;
+			}
+			else if(schedules[i].week >= 6){
+				schedules[i].week += 3;
+			}
+		}
