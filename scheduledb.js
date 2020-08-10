@@ -83,7 +83,7 @@
 			if(schedules[i].ename == '춘절 문 업데이트' || schedules[i].ename == '춘절2020' || schedules[i].ename == '춘절 무기뽑기' || schedules[i].ename == '황야여단'){
 				schedules[i].week = 5;
 			}
-			else if(schedules[i].week >= 6){
+			else if(schedules[i].week >= 6 && schedules[i].week < 20){
 				schedules[i].week += 2;
 			}
 		}
