@@ -88,12 +88,7 @@
 
 	function createContent(i){
 		var event = createDiv('', 'event');
-		if(schedules[i].guide != ''){
-			var link = createLink(get_guide_addr(i));
-		}
-		else{
-			var link = createDiv('', '');
-		}
+			var link = createLink(get_guide_addr(i));		
 				var evpic = createDiv('', 'evpic');
 					var evname = createDiv(schedules[i].ename, 'evname');
 					var pic_opac = createDiv('', 'pic_opac');
@@ -239,9 +234,12 @@
 
 	function createLink(address){
 		var temp = document.createElement('a');
-		temp.href = address;
-		temp.className = 'lightbox-link';
-		temp.setAttribute('data-scrolling', 'true');
+
+		if(address != ''){
+			temp.href = address;
+			temp.className = 'lightbox-link';
+			temp.setAttribute('data-scrolling', 'true');
+		}
 
 		return temp;
 	}

@@ -73,6 +73,8 @@
 		function get_guide_addr(i){
 			if(schedules[i].cat == 'event' || schedules[i].cat == 'pledge')
 				var temp = 'https://papago.naver.net/website?locale=ko&source=ja&target=ko&url=https%3A%2F%2Fgirlcafegun.boom-app.wiki%2Fentry%2F' + schedules[i].guide;
+			else
+				var temp = '';
 			return temp;
 		}
 
