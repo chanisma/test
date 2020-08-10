@@ -88,12 +88,17 @@
 
 	function createContent(i){
 		var event = createDiv('', 'event');
-		var link = createLink(get_guide_addr(i));
-			var evpic = createDiv('', 'evpic');
-				var evname = createDiv(schedules[i].ename, 'evname');
-				var pic_opac = createDiv('', 'pic_opac');
-			var evdet = createDiv('', 'evdet');
-		// var evetc = createDiv('', 'evetc');
+		if(schedules[i].guide != ''){
+			var link = createLink(get_guide_addr(i));
+		}
+		else{
+			var link = createDiv('', '');
+		}
+				var evpic = createDiv('', 'evpic');
+					var evname = createDiv(schedules[i].ename, 'evname');
+					var pic_opac = createDiv('', 'pic_opac');
+				var evdet = createDiv('', 'evdet');
+			// var evetc = createDiv('', 'evetc');
 
 		evpic.style.backgroundImage = getEPic(i);
 		evpic.style.backgroundSize = '500px';
