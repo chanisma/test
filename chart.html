@@ -103,32 +103,6 @@
 		device_ctrl();
 	</script>
 
-	<script>
-		(function(root, document) {
-			"use strict";
-			[].forEach.call(document.getElementsByClassName("lightbox-link"), function(el) {
-				el.lightbox = new IframeLightbox(el, {
-					onCreated: function() {
-						/* show your preloader */
-					},
-					onLoaded: function() {
-						/* hide your preloader */
-					},
-					onError: function() {
-						/* hide your preloader */
-					},
-					onClosed: function() {
-						/* hide your preloader */
-					},
-					scrolling: false,
-					/* default: false */
-					rate: 500 /* default: 500 */,
-					touch: false /* default: false - use with care for responsive images in links on vertical mobile screens */
-				});
-			});
-		})("undefined" !== typeof window ? window : this, document);
-	</script>
-
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 		  <defs>
 	    <filter id="goo">
